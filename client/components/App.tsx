@@ -1,11 +1,12 @@
 import Footer from './Footer'
 import Header from './Header'
+import Main from './Main'
 
 function App() {
   return (
     <div>
       <Header />
-      <p>React development has begun!</p>
+      <Main />
       <Footer />
     </div>
   )
