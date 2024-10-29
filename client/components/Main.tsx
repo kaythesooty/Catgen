@@ -1,5 +1,12 @@
+import { LeftPanel } from './main/LeftPanel'
+
 function Main() {
-  return <main>Main component goes here!</main>
+  return (
+    <main>
+      <LeftPanel />
+      Main component goes here!
+    </main>
+  )
 }
 
 export default Main
