@@ -1,9 +1,10 @@
 import Footer from './Footer'
+import Header from './Header'
 
 function App() {
   return (
     <div>
-      <h1>App</h1>
+      <Header />
       <p>React development has begun!</p>
       <Footer />
     </div>
