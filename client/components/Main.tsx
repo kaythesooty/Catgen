@@ -1,14 +1,13 @@
+import { Canvas } from './main/Canvas'
 import { LeftPanel } from './main/LeftPanel'
 import { RightPanel } from './main/RightPanel'
 
-function Main() {
+export function Main() {
   return (
     <main>
       <LeftPanel />
-      Main component goes here!
+      <Canvas />
       <RightPanel />
     </main>
   )
 }
-
-export default Main
