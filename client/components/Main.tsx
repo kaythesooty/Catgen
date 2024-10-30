@@ -6,10 +6,12 @@ import { Save } from './main/Save'
 export function Main() {
   return (
     <main>
-      <div>
+      <div className="flex-container">
         <LeftPanel />
-        <Canvas />
-        <Save />
+        <div className="flex-container flex-column">
+          <Canvas />
+          <Save />
+        </div>
         <RightPanel />
       </div>
       <Pickers />

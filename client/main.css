@@ -2,4 +2,46 @@ body {
   background-color: #faf8f1;
   color: #0a1520;
   font-family: 'Poppins', sans-serif;
+  width: 60vw;
+  margin: auto;
+  text-align: center;
+}
+
+canvas {
+  border: solid black 2px;
+}
+
+main {
+  background-color: rgb(163, 203, 238);
+}
+
+header {
+  background-color: aquamarine;
+  margin: auto;
+  width: 70%;
+}
+
+footer {
+  background-color: cadetblue;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.flex-column {
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.panel {
+  border: solid black 2px;
+  width: 20%;
+  height: 500px;
+}
+
+.picker {
+  height: 250px;
+  border: solid black 2px;
 }
