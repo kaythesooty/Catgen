@@ -1,7 +1,6 @@
 import { Canvas } from './main/Canvas'
-import { LeftPanel } from './main/LeftPanel'
+import { LeftPanel, RightPanel } from './main/Panels'
 import { Pickers } from './main/Pickers'
-import { RightPanel } from './main/RightPanel'
 import { Save } from './main/Save'
 
 export function Main() {

@@ -1,3 +1,9 @@
 export function Save() {
-  return <div>Save and randomise buttons</div>
+  return (
+    <>
+      <button>Randomise</button>
+      <button>Save JSON</button>
+      <button>Save as Image</button>
+    </>
+  )
 }
