@@ -45,7 +45,8 @@
   },
   "prettier": {
     "semi": false,
-    "singleQuote": true
+    "singleQuote": true,
+    "printWidth": 140,
   },
   "browserslist": "> 2%, not dead"
 }

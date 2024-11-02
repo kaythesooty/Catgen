@@ -10,7 +10,7 @@ export function Canvas({ draw }: Props) {
   useEffect(() => {
     const canvas = canvasRef.current
     const ctx = canvas.getContext('2d')
-    draw(ctx)
+    draw(ctx as CanvasRenderingContext2D)
   }, [draw])
 
   return <canvas ref={canvasRef} height={420} width={420}></canvas>

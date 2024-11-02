@@ -3,10 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Catgen</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./client/main.css" />
   </head>
   <body>
@@ -14,5 +11,10 @@
 
     <script src="./client/index.tsx" type="module"></script>
   </body>
-  <img src="/public/images/sprites/lineart.png" id="outline" />
+  <!-- Images here so they are loaded before rendering is done -->
+  <!-- TODO: Make a little loading cat animation and load these in app -->
+  <img src="/images/sprites/lineart.png" id="outline" class="hidden" />
+  <img src="/images/sprites/eyes.png" id="eyes" class="hidden" />
+  <img src="/images/sprites/skin.png" id="skin" class="hidden" />
+  <img src="/images/sprites/classiccolours.png" id="classiccolours" class="hidden" />
 </html>

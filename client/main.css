@@ -45,3 +45,12 @@ footer {
   height: 250px;
   border: solid black 2px;
 }
+
+.hidden {
+  display: none;
+}
+
+.save {
+  margin-left: 10px;
+  margin-right: 10px;
+}
