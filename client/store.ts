@@ -1,10 +1,4 @@
-export function calculateCoords(
-  index: number,
-  maxX: number,
-  maxY: number,
-  width: number,
-  height?: number,
-): number[] {
+export function calculateCoords(index: number, maxX: number, maxY: number, width: number, height?: number): number[] {
   const posArray = [0, 0]
 
   if (height === undefined) height = width

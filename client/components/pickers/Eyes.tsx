@@ -1,20 +1,41 @@
 interface Props {
-  eyes: (eyes: number) => void
+  eyes: (eyes: string) => void
 }
 
+import { eyeColourNames } from '../../../storage/dict_colours'
+
+export const eyeColours = [
+  'YELLOW',
+  'AMBER',
+  'HAZEL',
+  'PALEGREEN',
+  'GREEN',
+  'BLUE',
+  'DARKBLUE',
+  'GREY',
+  'CYAN',
+  'EMERALD',
+  'HEATHERBLUE',
+  'SUNLITICE',
+  'COPPER',
+  'SAGE',
+  'COBALT',
+  'PALEBLUE',
+  'BRONZE',
+  'SILVER',
+  'PALEYELLOW',
+  'GOLD',
+  'GREENYELLOW',
+]
+
 export function Eyes({ eyes }: Props) {
-  const buttons = []
-
-  for (let i = 0; i < 20; i++) {
-    buttons.push(
-      <button
-        key={i}
-        onClick={() => {
-          eyes(i)
-        }}
-      >{`Eye colour ${i}`}</button>
-    )
-  }
-
-  return <div>{buttons}</div>
+  return (
+    <div>
+      {eyeColours.map((clr, i) => (
+        <button key={i} onClick={() => eyes(clr)}>
+          {eyeColourNames[i]}
+        </button>
+      ))}
+    </div>
+  )
 }
