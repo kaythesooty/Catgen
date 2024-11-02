@@ -1,35 +1,23 @@
 import { useState } from 'react'
 import { Canvas } from './main/Canvas'
 import { LeftPanel, RightPanel } from './main/Panels'
-import { Save } from './main/Save'
+import { Save, randomiseCat } from './main/Save'
 import { calculateCoords } from '../store'
 import { PosePicker } from './pickers/Pose'
 import { Pickers } from './main/Pickers'
-import { Eyes } from './pickers/Eyes'
 import { peltColours, skinColours } from '../../storage/dict_colours'
-import { eyeColours } from './pickers/Eyes'
+import { eyeColours, Eyes } from './pickers/Eyes'
 import { Colour } from './pickers/Colour'
 import { Skin } from './pickers/Skin'
 import { Pattern } from './pickers/Pattern'
+import CatData from '../../models/Cat'
 
 const outline = document.getElementById('outline')
 const eyes = document.getElementById('eyes')
 const skin = document.getElementById('skin')
 
 export function Main() {
-  const [cat, setCat] = useState({
-    pose: 2,
-    moons: 21,
-    paralyzed: false,
-    sick: false,
-    pelt_name: 'Classic',
-    pelt_colour: 'BLACK',
-    pelt_length: 'long',
-    eye_colour: 'SUNLITICE',
-    reverse: false,
-    white_patches: null,
-    skin: 'MARBLED',
-  })
+  const [cat, setCat] = useState(randomiseCat)
   const [picker, setPicker] = useState('default')
 
   const draw = (context: CanvasRenderingContext2D) => {
@@ -70,6 +58,10 @@ export function Main() {
     setCat({ ...cat, pelt_name: pattern })
   }
 
+  const randomCat = (cat: CatData) => {
+    setCat(cat)
+  }
+
   const handlePicker = (picker: string) => {
     setPicker(picker)
   }
@@ -80,7 +72,7 @@ export function Main() {
         <LeftPanel choose={handlePicker} />
         <div className="flex-container flex-column">
           <Canvas draw={draw} />
-          <Save />
+          <Save cat={randomCat} />
         </div>
         <RightPanel />
       </div>
