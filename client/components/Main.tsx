@@ -4,6 +4,8 @@ import { LeftPanel, RightPanel } from './main/Panels'
 import { Save } from './main/Save'
 import { calculateCoords } from '../store'
 import { PosePicker } from './pickers/Pose'
+import { Pickers } from './main/Pickers'
+import { Eyes } from './pickers/Eyes'
 
 const outline = document.getElementById('outline')
 const classiccolours = document.getElementById('classiccolours')
@@ -24,6 +26,7 @@ export function Main() {
     white_patches: null,
     skin: 4,
   })
+  const [picker, setPicker] = useState('default')
 
   const draw = (context: CanvasRenderingContext2D) => {
     const outlinePos: number[] = calculateCoords(cat.pose, 3, 7, 50)
@@ -47,19 +50,29 @@ export function Main() {
     setCat({ ...cat, pose: poseSet })
   }
 
+  const updateEyes = (eyes: number) => {
+    setCat({ ...cat, eye_colour: eyes })
+  }
+
+  const handlePicker = (picker: string) => {
+    setPicker(picker)
+  }
+
   console.log(cat)
 
   return (
     <main>
       <div className="flex-container">
-        <LeftPanel />
+        <LeftPanel choose={handlePicker} />
         <div className="flex-container flex-column">
           <Canvas draw={draw} />
           <Save />
         </div>
         <RightPanel />
       </div>
-      <PosePicker pose={updateWrapper} />
+      {picker === 'default' && <Pickers />}
+      {picker === 'poses' && <PosePicker pose={updateWrapper} />}
+      {picker === 'eyes' && <Eyes eyes={updateEyes} />}
     </main>
   )
 }
