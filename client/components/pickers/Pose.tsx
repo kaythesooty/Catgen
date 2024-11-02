@@ -9,5 +9,5 @@ export function PosePicker({ pose }: Props) {
   for (let i = 0; i < 21; i++) {
     buttons.push(<button key={i} onClick={() => pose(i)}>{`Pose ${i}`}</button>)
   }
-  return <div>{buttons}</div>
+  return <div className="picker">{buttons}</div>
 }

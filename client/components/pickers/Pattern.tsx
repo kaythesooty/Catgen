@@ -6,7 +6,7 @@ interface Props {
 
 export function Pattern({ pattern }: Props) {
   return (
-    <div>
+    <div className="picker">
       {peltPatterns.map((ptn, i) => (
         <button key={i} onClick={() => pattern(ptn)}>
           {ptn}

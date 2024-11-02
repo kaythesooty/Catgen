@@ -6,7 +6,7 @@ import { skinColours } from '../../../storage/dict_colours'
 
 export function Skin({ skin }: Props) {
   return (
-    <div>
+    <div className="picker">
       {skinColours.map((clr, i) => (
         <button key={i} onClick={() => skin(clr)}>
           {clr}

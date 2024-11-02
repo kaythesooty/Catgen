@@ -39,9 +39,11 @@ export function Save({ cat }: Props) {
 
   return (
     <div>
-      <button onClick={() => cat(newCat)}>Randomise</button>
-      <button>Save JSON</button>
-      <button>Save as Image</button>
+      <button className="save" onClick={() => cat(newCat)}>
+        Randomise
+      </button>
+      <button className="save">Save JSON</button>
+      <button className="save">Save as Image</button>
     </div>
   )
 }

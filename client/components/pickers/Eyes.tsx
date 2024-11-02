@@ -30,7 +30,7 @@ export const eyeColours = [
 
 export function Eyes({ eyes }: Props) {
   return (
-    <div>
+    <div className="picker">
       {eyeColours.map((clr, i) => (
         <button key={i} onClick={() => eyes(clr)}>
           {eyeColourNames[i]}

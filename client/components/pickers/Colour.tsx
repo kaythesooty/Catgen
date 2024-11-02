@@ -6,7 +6,7 @@ interface Props {
 
 export function Colour({ colour }: Props) {
   return (
-    <div>
+    <div className="picker">
       {peltColours.map((clr, i) => (
         <button key={i} onClick={() => colour(clr)}>
           {clr}
