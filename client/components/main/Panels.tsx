@@ -1,25 +1,29 @@
+import CatData from '../../../models/Cat'
+
 interface Props {
   choose: (picker: string) => void
+  cat: CatData
 }
 
-export function LeftPanel({ choose }: Props) {
+export function LeftPanel({ choose, cat }: Props) {
   return (
     <aside className="panel">
       Left panel
       <br />
       <button onClick={() => choose('poses')}>Poses</button>
-      <br />
+      <p>{cat.pose}</p>
       <button onClick={() => choose('eyes')}>Eye Colour</button>
-      <br />
+      <p>{cat.eye_colour}</p>
       <button onClick={() => choose('colour')}>Pelt Colour</button>
-      <br />
+      <p>{cat.pelt_colour}</p>
       <button onClick={() => choose('skin')}>Skin Colour</button>
-      <br />
+      <p>{cat.skin}</p>
       <button onClick={() => choose('pattern')}>Pelt Pattern</button>
+      <p>{cat.pelt_name}</p>
     </aside>
   )
 }
 
-export function RightPanel() {
+export function RightPanel({ choose, cat }: Props) {
   return <aside className="panel">Right Panel</aside>
 }

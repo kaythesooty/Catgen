@@ -38,24 +38,8 @@ export function Main() {
     context.drawImage(skin, skinPos[0], skinPos[1], 50, 50, 10, 10, 400, 400)
   }
 
-  const updateWrapper = (poseSet: number) => {
-    setCat({ ...cat, pose: poseSet })
-  }
-
-  const updateEyes = (eyes: string) => {
-    setCat({ ...cat, eye_colour: eyes })
-  }
-
-  const updateColour = (colour: string) => {
-    setCat({ ...cat, pelt_colour: colour })
-  }
-
-  const updateSkin = (colour: string) => {
-    setCat({ ...cat, skin: colour })
-  }
-
-  const updatePattern = (pattern: string) => {
-    setCat({ ...cat, pelt_name: pattern })
+  const updateWrapper = (newCat: CatData) => {
+    setCat(newCat)
   }
 
   const randomCat = (cat: CatData) => {
@@ -69,19 +53,19 @@ export function Main() {
   return (
     <main>
       <div className="flex-container">
-        <LeftPanel choose={handlePicker} />
+        <LeftPanel choose={handlePicker} cat={cat} />
         <div className="flex-container flex-column">
           <Canvas draw={draw} />
           <Save cat={randomCat} />
         </div>
-        <RightPanel />
+        <RightPanel choose={handlePicker} cat={cat} />
       </div>
       {picker === 'default' && <Pickers />}
-      {picker === 'poses' && <PosePicker pose={updateWrapper} />}
-      {picker === 'eyes' && <Eyes eyes={updateEyes} />}
-      {picker === 'colour' && <Colour colour={updateColour} />}
-      {picker === 'skin' && <Skin skin={updateSkin} />}
-      {picker === 'pattern' && <Pattern pattern={updatePattern} />}
+      {picker === 'poses' && <PosePicker setter={updateWrapper} cat={cat} />}
+      {picker === 'eyes' && <Eyes setter={updateWrapper} cat={cat} />}
+      {picker === 'colour' && <Colour setter={updateWrapper} cat={cat} />}
+      {picker === 'skin' && <Skin setter={updateWrapper} cat={cat} />}
+      {picker === 'pattern' && <Pattern setter={updateWrapper} cat={cat} />}
     </main>
   )
 }

@@ -1,8 +1,10 @@
-interface Props {
-  eyes: (eyes: string) => void
-}
-
+import CatData from '../../../models/Cat'
 import { eyeColourNames } from '../../../storage/dict_colours'
+
+interface Props {
+  setter: (newCat: CatData) => void
+  cat: CatData
+}
 
 export const eyeColours = [
   'YELLOW',
@@ -28,11 +30,11 @@ export const eyeColours = [
   'GREENYELLOW',
 ]
 
-export function Eyes({ eyes }: Props) {
+export function Eyes({ setter, cat }: Props) {
   return (
     <div className="picker">
       {eyeColours.map((clr, i) => (
-        <button key={i} onClick={() => eyes(clr)}>
+        <button key={i} onClick={() => setter({ ...cat, eye_colour: clr })}>
           {eyeColourNames[i]}
         </button>
       ))}

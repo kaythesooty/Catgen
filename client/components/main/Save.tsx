@@ -21,7 +21,7 @@ const defaultCat = {
   skin: 'DARKSALMON',
 }
 
-export function randomiseCat() {
+export function randomiseCat(): CatData {
   const cat = { ...defaultCat }
   cat.pose = randomInt(0, 20)
   cat.moons = randomInt(0, 180)

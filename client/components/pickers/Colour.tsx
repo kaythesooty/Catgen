@@ -1,14 +1,16 @@
+import CatData from '../../../models/Cat'
 import { peltColours } from '../../../storage/dict_colours'
 
 interface Props {
-  colour: (colourPos: string) => void
+  setter: (newCat: CatData) => void
+  cat: CatData
 }
 
-export function Colour({ colour }: Props) {
+export function Colour({ setter, cat }: Props) {
   return (
     <div className="picker">
       {peltColours.map((clr, i) => (
-        <button key={i} onClick={() => colour(clr)}>
+        <button key={i} onClick={() => setter({ ...cat, pelt_colour: clr })}>
           {clr}
         </button>
       ))}
