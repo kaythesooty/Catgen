@@ -14,7 +14,10 @@ import CatData from '../../models/Cat'
 
 const outline = document.getElementById('outline')
 const eyes = document.getElementById('eyes')
+const eyes2 = document.getElementById('eyes2')
 const skin = document.getElementById('skin')
+const white = document.getElementById('white-patches')
+const tortie = document.getElementById('tortie-masks')
 
 export function Main() {
   const [cat, setCat] = useState(randomiseCat)
@@ -25,9 +28,17 @@ export function Main() {
     let colourPos: number[] = calculateCoords(peltColours.indexOf(cat.pelt_colour), 7, 3, 150, 350)
     let eyePos: number[] = calculateCoords(eyeColours.indexOf(cat.eye_colour), 12, 2, 150, 350)
     let skinPos: number[] = calculateCoords(skinColours.indexOf(cat.skin), 6, 3, 150, 350)
+    let eyePos2: number[] = [0, 0]
+    if (cat.eye_colour2 != null) {
+      eyePos2 = calculateCoords(eyeColours.indexOf(cat.eye_colour2), 12, 2, 150, 350)
+    }
+    // let tortiePos: number[] = calculateCoords()
 
     colourPos = colourPos.map((clr, idx) => clr + outlinePos[idx])
     eyePos = eyePos.map((clr, idx) => clr + outlinePos[idx])
+    if (cat.eye_colour2 != 'null') {
+      eyePos2 = eyePos2.map((clr, idx) => clr + outlinePos[idx])
+    }
     skinPos = skinPos.map((clr, idx) => clr + outlinePos[idx])
 
     context.reset()
@@ -36,6 +47,9 @@ export function Main() {
     context.drawImage(outline, outlinePos[0], outlinePos[1], 50, 50, 10, 10, 400, 400)
     context.drawImage(eyes, eyePos[0], eyePos[1], 50, 50, 10, 10, 400, 400)
     context.drawImage(skin, skinPos[0], skinPos[1], 50, 50, 10, 10, 400, 400)
+    if (cat.eye_colour2 != null) {
+      context.drawImage(eyes2, eyePos2[0], eyePos2[1], 50, 50, 10, 10, 400, 400)
+    }
   }
 
   const updateWrapper = (newCat: CatData) => {

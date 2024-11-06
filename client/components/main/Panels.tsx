@@ -14,6 +14,7 @@ export function LeftPanel({ choose, cat }: Props) {
       <p>{cat.pose}</p>
       <button onClick={() => choose('eyes')}>Eye Colour</button>
       <p>{cat.eye_colour}</p>
+      {cat.eye_colour2 != 'null' && <p>{cat.eye_colour2}</p>}
       <button onClick={() => choose('colour')}>Pelt Colour</button>
       <p>{cat.pelt_colour}</p>
       <button onClick={() => choose('skin')}>Skin Colour</button>

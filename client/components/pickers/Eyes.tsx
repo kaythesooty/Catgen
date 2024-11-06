@@ -38,6 +38,13 @@ export function Eyes({ setter, cat }: Props) {
           {eyeColourNames[i]}
         </button>
       ))}
+      <h3>Homophobia</h3>
+      <button onClick={() => setter({ ...cat, eye_colour2: 'null' })}>None</button>
+      {eyeColours.map((clr, i) => (
+        <button key={i} onClick={() => setter({ ...cat, eye_colour2: clr })}>
+          {eyeColourNames[i]}
+        </button>
+      ))}
     </div>
   )
 }

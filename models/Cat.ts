@@ -7,6 +7,7 @@ export default interface CatData {
   pelt_colour: string
   pelt_length: string
   eye_colour: string
+  eye_colour2: string | null
   reverse: boolean
   white_patches: string
   skin: string
