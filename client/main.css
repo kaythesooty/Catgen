@@ -25,6 +25,10 @@ footer {
   background-color: cadetblue;
 }
 
+p {
+  margin-top: 5px;
+}
+
 .flex-container {
   display: flex;
   justify-content: space-evenly;

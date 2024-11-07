@@ -9,6 +9,6 @@ export default interface CatData {
   eye_colour: string
   eye_colour2: string | null
   reverse: boolean
-  white_patches: string
+  white_patches: string | null
   skin: string
 }

@@ -1,4 +1,4 @@
-import { skinColours } from '../../../storage/dict_colours'
+import { skinColours } from '../../../storage/dict'
 import CatData from '../../../models/Cat'
 
 interface Props {

@@ -1,5 +1,5 @@
 import { randomBool, randomInt } from '../../store'
-import { peltPatterns, peltColours, skinColours } from '../../../storage/dict_colours'
+import { peltPatterns, peltColours, skinColours, whitePatches } from '../../../storage/dict'
 import { eyeColours } from '../pickers/Eyes'
 import CatData from '../../../models/Cat'
 
@@ -7,7 +7,7 @@ interface Props {
   cat: (cat: CatData) => void
 }
 
-const defaultCat = {
+const defaultCat: CatData = {
   pose: 8,
   moons: 37,
   paralyzed: false,
@@ -16,8 +16,9 @@ const defaultCat = {
   pelt_colour: 'BLACK',
   pelt_length: 'short',
   eye_colour: 'SUNLITICE',
+  eye_colour2: null,
   reverse: true,
-  white_patches: '',
+  white_patches: null,
   skin: 'DARKSALMON',
 }
 
@@ -30,6 +31,7 @@ export function randomiseCat(): CatData {
   cat.eye_colour = eyeColours[randomInt(0, eyeColours.length - 1)]
   cat.reverse = randomBool()
   cat.skin = skinColours[randomInt(0, skinColours.length - 1)]
+  cat.white_patches = randomBool() ? whitePatches[randomInt(1, whitePatches.length - 1)] : null
 
   return cat
 }

@@ -26,5 +26,12 @@ export function LeftPanel({ choose, cat }: Props) {
 }
 
 export function RightPanel({ choose, cat }: Props) {
-  return <aside className="panel">Right Panel</aside>
+  return (
+    <aside className="panel">
+      Right Panel
+      <br />
+      <button onClick={() => choose('white')}>White Patches</button>
+      <p>{cat.white_patches}</p>
+    </aside>
+  )
 }

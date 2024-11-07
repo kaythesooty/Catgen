@@ -1,5 +1,5 @@
 import CatData from '../../../models/Cat'
-import { eyeColourNames } from '../../../storage/dict_colours'
+import { eyeColourNames } from '../../../storage/dict'
 
 interface Props {
   setter: (newCat: CatData) => void

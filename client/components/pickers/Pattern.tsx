@@ -1,4 +1,4 @@
-import { peltPatterns } from '../../../storage/dict_colours'
+import { peltPatterns } from '../../../storage/dict'
 import CatData from '../../../models/Cat'
 
 interface Props {
