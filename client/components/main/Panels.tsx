@@ -31,7 +31,9 @@ export function RightPanel({ choose, cat }: Props) {
       Right Panel
       <br />
       <button onClick={() => choose('white')}>White Patches</button>
-      <p>{cat.white_patches}</p>
+      <p>{cat.white_patches != null ? cat.white_patches : `-----`}</p>
+      {cat.tortie_base != null && <button onClick={() => choose('torties')}>Tortie Patterns</button>}
+      <p>{cat.pattern}</p>
     </aside>
   )
 }

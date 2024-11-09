@@ -12,6 +12,7 @@ import { Skin } from './pickers/Skin'
 import { Pattern } from './pickers/Pattern'
 import { White } from './pickers/White'
 import CatData from '../../models/Cat'
+import { TortieOptions } from './pickers/Tortie'
 
 const outline = document.getElementById('outline')
 const eyes = document.getElementById('eyes')
@@ -80,6 +81,8 @@ export function Main() {
   }
 
   const updateWrapper = (newCat: CatData) => {
+    if (newCat.pelt_name === 'Tortie' && newCat.white_patches !== null) newCat.pelt_name = 'Calico'
+    if (newCat.pelt_name === 'Calico' && newCat.white_patches === null) newCat.pelt_name = 'Tortie'
     setCat(newCat)
   }
 
@@ -108,6 +111,7 @@ export function Main() {
       {picker === 'skin' && <Skin setter={updateWrapper} cat={cat} />}
       {picker === 'pattern' && <Pattern setter={updateWrapper} cat={cat} />}
       {picker === 'white' && <White setter={updateWrapper} cat={cat} />}
+      {picker === 'torties' && <TortieOptions setter={updateWrapper} cat={cat} />}
     </main>
   )
 }
