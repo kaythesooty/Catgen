@@ -36,7 +36,7 @@ export function Main() {
       eyePos2 = calculateCoords(eyeColours.indexOf(cat.eye_colour2), 12, 2, 150, 350)
     }
     let tortiePos = calculateCoords(tortiePatterns.indexOf(cat.pattern), 10, 5, 150, 350)
-    let tortieColourPos = calculateCoords(peltColours.indexOf(cat.pelt_colour), 7, 3, 150, 350)
+    let tortieColourPos = calculateCoords(peltColours.indexOf(cat.tortie_color), 7, 3, 150, 350)
 
     // Calculate sprites based on pose
     colourPos = colourPos.map((clr, idx) => clr + outlinePos[idx])
@@ -75,6 +75,8 @@ export function Main() {
       context.drawImage(eyes2, eyePos2[0], eyePos2[1], 50, 50, 10, 10, 400, 400)
     }
     context.drawImage(skin, skinPos[0], skinPos[1], 50, 50, 10, 10, 400, 400)
+
+    console.log(cat)
   }
 
   const updateWrapper = (newCat: CatData) => {
