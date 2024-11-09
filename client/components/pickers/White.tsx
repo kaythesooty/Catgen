@@ -9,6 +9,7 @@ interface Props {
 export function White({ setter, cat }: Props) {
   return (
     <div className="picker">
+      <button onClick={() => setter({ ...cat, white_patches: null })}>NONE</button>
       {whitePatches.map((ptn, i) => (
         <button key={i} onClick={() => setter({ ...cat, white_patches: ptn })}>
           {ptn}
