@@ -1,5 +1,5 @@
 import CatData from '../../../models/Cat'
-import { tortiePatterns } from '../../../storage/dict'
+import { peltColours, peltPatterns, tortiePatterns } from '../../../storage/dict'
 
 interface Props {
   setter: (newCat: CatData) => void
@@ -11,6 +11,42 @@ export function TortieOptions({ cat, setter }: Props) {
     <div className="picker">
       {tortiePatterns.map((clr, i) => (
         <button key={i} onClick={() => setter({ ...cat, pattern: clr })}>
+          {clr}
+        </button>
+      ))}
+    </div>
+  )
+}
+
+export function TortieBase({ setter, cat }: Props) {
+  return (
+    <div className="picker">
+      {peltPatterns.map((ptn, i) => (
+        <button key={i} onClick={() => setter({ ...cat, tortie_base: ptn.toLowerCase() })}>
+          {ptn}
+        </button>
+      ))}
+    </div>
+  )
+}
+
+export function TortieSecond({ setter, cat }: Props) {
+  return (
+    <div className="picker">
+      {peltPatterns.map((ptn, i) => (
+        <button key={i} onClick={() => setter({ ...cat, tortie_pattern: ptn.toLowerCase() })}>
+          {ptn}
+        </button>
+      ))}
+    </div>
+  )
+}
+
+export function TortieColour({ setter, cat }: Props) {
+  return (
+    <div className="picker">
+      {peltColours.map((clr, i) => (
+        <button key={i} onClick={() => setter({ ...cat, tortie_color: clr })}>
           {clr}
         </button>
       ))}

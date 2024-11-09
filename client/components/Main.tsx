@@ -12,7 +12,7 @@ import { Skin } from './pickers/Skin'
 import { Pattern } from './pickers/Pattern'
 import { White } from './pickers/White'
 import CatData from '../../models/Cat'
-import { TortieOptions } from './pickers/Tortie'
+import { TortieBase, TortieColour, TortieOptions, TortieSecond } from './pickers/Tortie'
 
 const outline = document.getElementById('outline')
 const eyes = document.getElementById('eyes')
@@ -112,6 +112,9 @@ export function Main() {
       {picker === 'pattern' && <Pattern setter={updateWrapper} cat={cat} />}
       {picker === 'white' && <White setter={updateWrapper} cat={cat} />}
       {picker === 'torties' && <TortieOptions setter={updateWrapper} cat={cat} />}
+      {picker === 'torties-base' && <TortieBase setter={updateWrapper} cat={cat} />}
+      {picker === 'torties-pattern' && <TortieSecond setter={updateWrapper} cat={cat} />}
+      {picker === 'torties-colour' && <TortieColour setter={updateWrapper} cat={cat} />}
     </main>
   )
 }
