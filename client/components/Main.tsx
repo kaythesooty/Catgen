@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Canvas } from './main/Canvas'
 import { LeftPanel, RightPanel } from './main/Panels'
-import { Save, randomiseCat } from './main/Save'
+import { randomiseCat } from './main/Save'
 import { calculateCoords } from '../store'
 import { PosePicker } from './pickers/Pose'
 import { Pickers } from './main/Pickers'
@@ -28,7 +28,7 @@ export function Main() {
   const draw = (context: CanvasRenderingContext2D) => {
     // Calculate spritesheet coords
     const outlinePos = calculateCoords(cat.pose, 3, 7, 50)
-    let colourPos = calculateCoords(peltColours.indexOf(cat.pelt_colour), 7, 3, 150, 350)
+    let colourPos = calculateCoords(peltColours.indexOf(cat.pelt_color), 7, 3, 150, 350)
     let eyePos = calculateCoords(eyeColours.indexOf(cat.eye_colour), 12, 2, 150, 350)
     let skinPos = calculateCoords(skinColours.indexOf(cat.skin), 6, 3, 150, 350)
     let eyePos2 = calculateCoords(eyeColours.indexOf(cat.eye_colour2), 12, 2, 150, 350)
@@ -91,8 +91,8 @@ export function Main() {
       <div className="flex-container">
         <LeftPanel choose={handlePicker} cat={cat} />
         <div className="flex-container flex-column">
-          <Canvas draw={draw} />
-          <Save cat={randomCat} />
+          <Canvas draw={draw} catSetter={randomCat} cat={cat} />
+          {/* <Save cat={randomCat} /> */}
         </div>
         <RightPanel choose={handlePicker} cat={cat} />
       </div>

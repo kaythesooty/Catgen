@@ -4,7 +4,7 @@ export default interface CatData {
   paralyzed: boolean
   sick: boolean
   pelt_name: string
-  pelt_colour: string
+  pelt_color: string
   pelt_length: string
   eye_colour: string
   eye_colour2: string | null

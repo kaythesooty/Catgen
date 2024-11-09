@@ -10,7 +10,7 @@ export function Colour({ setter, cat }: Props) {
   return (
     <div className="picker">
       {peltColours.map((clr, i) => (
-        <button key={i} onClick={() => setter({ ...cat, pelt_colour: clr })}>
+        <button key={i} onClick={() => setter({ ...cat, pelt_color: clr })}>
           {clr}
         </button>
       ))}
