@@ -10,5 +10,9 @@ export default interface CatData {
   eye_colour2: string | null
   reverse: boolean
   white_patches: string | null
+  pattern: string | null
+  tortie_base: string | null
+  tortie_color: string | null
+  tortie_pattern: string | null
   skin: string
 }
