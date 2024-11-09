@@ -31,20 +31,15 @@ export function Main() {
     let colourPos = calculateCoords(peltColours.indexOf(cat.pelt_colour), 7, 3, 150, 350)
     let eyePos = calculateCoords(eyeColours.indexOf(cat.eye_colour), 12, 2, 150, 350)
     let skinPos = calculateCoords(skinColours.indexOf(cat.skin), 6, 3, 150, 350)
-    let eyePos2 = [0, 0]
+    let eyePos2 = calculateCoords(eyeColours.indexOf(cat.eye_colour2), 12, 2, 150, 350)
     let whitePos = calculateCoords(whitePatches.indexOf(cat.white_patches), 14, 10, 150, 350)
-    if (cat.eye_colour2 != null) {
-      eyePos2 = calculateCoords(eyeColours.indexOf(cat.eye_colour2), 12, 2, 150, 350)
-    }
     let tortiePos = calculateCoords(tortiePatterns.indexOf(cat.pattern), 10, 5, 150, 350)
     let tortieColourPos = calculateCoords(peltColours.indexOf(cat.tortie_color), 7, 3, 150, 350)
 
     // Calculate sprites based on pose
     colourPos = colourPos.map((clr, idx) => clr + outlinePos[idx])
     eyePos = eyePos.map((clr, idx) => clr + outlinePos[idx])
-    if (cat.eye_colour2 != 'null') {
-      eyePos2 = eyePos2.map((clr, idx) => clr + outlinePos[idx])
-    }
+    eyePos2 = eyePos2.map((clr, idx) => clr + outlinePos[idx])
     skinPos = skinPos.map((clr, idx) => clr + outlinePos[idx])
     whitePos = whitePos.map((clr, idx) => clr + outlinePos[idx])
     tortiePos = tortiePos.map((clr, idx) => clr + outlinePos[idx])
@@ -70,11 +65,8 @@ export function Main() {
 
     context.drawImage(white, whitePos[0], whitePos[1], 50, 50, 10, 10, 400, 400)
     context.drawImage(outline, outlinePos[0], outlinePos[1], 50, 50, 10, 10, 400, 400)
-
     context.drawImage(eyes, eyePos[0], eyePos[1], 50, 50, 10, 10, 400, 400)
-    if (cat.eye_colour2 != null) {
-      context.drawImage(eyes2, eyePos2[0], eyePos2[1], 50, 50, 10, 10, 400, 400)
-    }
+    context.drawImage(eyes2, eyePos2[0], eyePos2[1], 50, 50, 10, 10, 400, 400)
     context.drawImage(skin, skinPos[0], skinPos[1], 50, 50, 10, 10, 400, 400)
 
     console.log(cat)
