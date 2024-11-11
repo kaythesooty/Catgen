@@ -1,11 +1,15 @@
 export default interface CatData {
-  pose: number
   moons: number
   paralyzed: boolean
   sick: boolean
   pelt_name: string
   pelt_color: string
   pelt_length: string
+  sprite_kitten: number
+  sprite_adolescent: number
+  sprite_adult: number
+  sprite_senior: number
+  sprite_para_adult: number
   eye_colour: string
   eye_colour2: string | null
   reverse: boolean

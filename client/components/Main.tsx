@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Canvas } from './main/Canvas'
 import { LeftPanel, RightPanel } from './main/Panels'
 import { randomiseCat } from './main/Save'
-import { calculateCoords } from '../store'
+import { calculateCoords, getPose } from '../store'
 import { PosePicker } from './pickers/Pose'
 import { Pickers } from './main/Pickers'
 import { peltColours, skinColours, tortiePatterns, whitePatches } from '../../storage/dict'
@@ -26,8 +26,9 @@ export function Main() {
   const [picker, setPicker] = useState('default')
 
   const draw = (context: CanvasRenderingContext2D) => {
+    const pose = getPose(cat)
     // Calculate spritesheet coords
-    const outlinePos = calculateCoords(cat.pose, 3, 7, 50)
+    const outlinePos = calculateCoords(pose, 3, 7, 50)
     let colourPos = calculateCoords(peltColours.indexOf(cat.pelt_color), 7, 3, 150, 350)
     let eyePos = calculateCoords(eyeColours.indexOf(cat.eye_colour), 12, 2, 150, 350)
     let skinPos = calculateCoords(skinColours.indexOf(cat.skin), 6, 3, 150, 350)

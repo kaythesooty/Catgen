@@ -10,13 +10,17 @@ interface Props {
 }
 
 const defaultCat: CatData = {
-  pose: 8,
   moons: 37,
   paralyzed: false,
   sick: false,
   pelt_name: 'SingleColour',
   pelt_color: 'BLACK',
   pelt_length: 'short',
+  sprite_kitten: 0,
+  sprite_adolescent: 3,
+  sprite_adult: 8,
+  sprite_senior: 13,
+  sprite_para_adult: 15,
   eye_colour: 'SUNLITICE',
   eye_colour2: null,
   reverse: true,
@@ -30,10 +34,18 @@ const defaultCat: CatData = {
 
 export function randomiseCat(): CatData {
   const cat = { ...defaultCat }
-  cat.pose = randomInt(0, 20)
   cat.moons = randomInt(0, 180)
   cat.pelt_name = peltPatterns[randomInt(0, peltPatterns.length - 1)]
   cat.pelt_color = peltColours[randomInt(0, peltColours.length - 1)]
+  if (randomInt(1, 3) == 3) {
+    cat.pelt_length = 'long'
+  } else if (randomBool()) {
+    cat.pelt_length = 'short'
+  } else cat.pelt_length = 'medium'
+  cat.sprite_kitten = randomInt(0, 2)
+  cat.sprite_adolescent = randomInt(3, 5)
+  cat.sprite_adult = randomInt(6, 8)
+  cat.sprite_senior = randomInt(12, 14)
   cat.eye_colour = eyeColours[randomInt(0, eyeColours.length - 1)]
   cat.reverse = randomBool()
   cat.skin = skinColours[randomInt(0, skinColours.length - 1)]
@@ -44,6 +56,10 @@ export function randomiseCat(): CatData {
     cat.tortie_base = peltPatterns[randomInt(0, peltPatterns.length - 1)].toLowerCase()
     cat.tortie_color = peltColours[randomInt(0, peltColours.length - 1)]
     cat.tortie_pattern = peltPatterns[randomInt(0, peltPatterns.length - 1)].toLowerCase()
+  }
+  if (cat.pelt_length == 'long') {
+    cat.sprite_adult = cat.sprite_adult + 3
+    cat.sprite_para_adult = 16
   }
 
   return cat
