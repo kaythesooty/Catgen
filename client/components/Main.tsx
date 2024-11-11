@@ -7,7 +7,6 @@ import { PosePicker } from './pickers/Pose'
 import { Pickers } from './main/Pickers'
 import { peltColours, skinColours, tortiePatterns, whitePatches } from '../../storage/dict'
 import { eyeColours, Eyes } from './pickers/Eyes'
-import { Colour } from './pickers/Colour'
 import { Skin } from './pickers/Skin'
 import { Pelt } from './pickers/Pelt'
 import { White } from './pickers/White'
@@ -50,6 +49,10 @@ export function Main() {
     // Initialise canvas
     context.reset()
     context.imageSmoothingEnabled = false
+    if (cat.reverse) {
+      context.translate(420, 0)
+      context.scale(-1, 1)
+    }
 
     // Draw tortie pattern first, then it will be clipped by the mask
     if (cat.pelt_name === 'Tortie' || cat.pelt_name === 'Calico') {
@@ -99,7 +102,6 @@ export function Main() {
       {picker === 'default' && <Pickers />}
       {picker === 'poses' && <PosePicker setter={updateWrapper} cat={cat} />}
       {picker === 'eyes' && <Eyes setter={updateWrapper} cat={cat} />}
-      {picker === 'colour' && <Colour setter={updateWrapper} cat={cat} />}
       {picker === 'skin' && <Skin setter={updateWrapper} cat={cat} />}
       {picker === 'pelt' && <Pelt setter={updateWrapper} cat={cat} />}
       {picker === 'white' && <White setter={updateWrapper} cat={cat} />}

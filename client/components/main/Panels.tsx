@@ -23,8 +23,6 @@ export function LeftPanel({ choose, cat, setCat }: Props) {
       <button onClick={() => choose('eyes')}>Eye Colour</button>
       <p>{cat.eye_colour}</p>
       {cat.eye_colour2 != 'null' && <p>{cat.eye_colour2}</p>}
-      <button onClick={() => choose('colour')}>Pelt Colour</button>
-      <p>{cat.pelt_color}</p>
       <button onClick={() => choose('skin')}>Skin Colour</button>
       <p>{cat.skin}</p>
       <button onClick={() => choose('pelt')}>Pelt Options</button>
@@ -37,6 +35,10 @@ export function LeftPanel({ choose, cat, setCat }: Props) {
       <br />
       <label>
         Paralysed: <input type="checkbox" checked={cat.paralyzed} onChange={(e) => setCat({ ...cat, paralyzed: e.target.checked })}></input>
+      </label>
+      <br />
+      <label>
+        Reverse: <input type="checkbox" checked={cat.reverse} onChange={(e) => setCat({ ...cat, reverse: e.target.checked })}></input>
       </label>
     </aside>
   )
