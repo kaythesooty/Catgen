@@ -69,8 +69,6 @@ export function Main() {
     context.drawImage(eyes, eyePos[0], eyePos[1], 50, 50, 10, 10, 400, 400)
     context.drawImage(eyes2, eyePos2[0], eyePos2[1], 50, 50, 10, 10, 400, 400)
     context.drawImage(skin, skinPos[0], skinPos[1], 50, 50, 10, 10, 400, 400)
-
-    console.log(cat)
   }
 
   const updateWrapper = (newCat: CatData) => {
