@@ -3,12 +3,20 @@ import CatData from '../../../models/Cat'
 interface Props {
   choose: (picker: string) => void
   cat: CatData
+  setCat?: (newCat: CatData) => void
 }
 
-export function LeftPanel({ choose, cat }: Props) {
+export function LeftPanel({ choose, cat, setCat }: Props) {
+  if (setCat === undefined) {
+    return <h4>Cannot set cat! (Panels.tsx)</h4>
+  }
   return (
     <aside className="panel">
       Left panel
+      <br />
+      <label>
+        Age: <input type="number" min={0} max={512} value={cat.moons} onChange={(e) => setCat({ ...cat, moons: +e.target.value })}></input>
+      </label>
       <br />
       <button onClick={() => choose('poses')}>Poses</button>
       <p>{cat.pose}</p>
@@ -21,6 +29,13 @@ export function LeftPanel({ choose, cat }: Props) {
       <p>{cat.skin}</p>
       <button onClick={() => choose('pattern')}>Pelt Pattern</button>
       <p>{cat.pelt_name}</p>
+      <label>
+        Sick: <input type="checkbox" checked={cat.sick} onChange={(e) => setCat({ ...cat, sick: e.target.checked })}></input>
+      </label>
+      <br />
+      <label>
+        Paralysed: <input type="checkbox" checked={cat.paralyzed} onChange={(e) => setCat({ ...cat, paralyzed: e.target.checked })}></input>
+      </label>
     </aside>
   )
 }

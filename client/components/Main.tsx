@@ -89,10 +89,9 @@ export function Main() {
   return (
     <main>
       <div className="flex-container">
-        <LeftPanel choose={handlePicker} cat={cat} />
+        <LeftPanel choose={handlePicker} cat={cat} setCat={setCat} />
         <div className="flex-container flex-column">
           <Canvas draw={draw} catSetter={randomCat} cat={cat} />
-          {/* <Save cat={randomCat} /> */}
         </div>
         <RightPanel choose={handlePicker} cat={cat} />
       </div>
