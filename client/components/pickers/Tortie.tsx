@@ -26,6 +26,12 @@ export function TortieBase({ setter, cat }: Props) {
           {ptn}
         </button>
       ))}
+      <div className="line"></div>
+      {peltColours.map((clr, i) => (
+        <button key={i} onClick={() => setter({ ...cat, pelt_color: clr })}>
+          {clr}
+        </button>
+      ))}
     </div>
   )
 }
@@ -38,13 +44,7 @@ export function TortieSecond({ setter, cat }: Props) {
           {ptn}
         </button>
       ))}
-    </div>
-  )
-}
-
-export function TortieColour({ setter, cat }: Props) {
-  return (
-    <div className="picker">
+      <div className="line"></div>
       {peltColours.map((clr, i) => (
         <button key={i} onClick={() => setter({ ...cat, tortie_color: clr })}>
           {clr}

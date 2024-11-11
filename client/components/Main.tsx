@@ -107,8 +107,7 @@ export function Main() {
       {picker === 'white' && <White setter={updateWrapper} cat={cat} />}
       {picker === 'torties' && <TortieOptions setter={updateWrapper} cat={cat} />}
       {picker === 'torties-base' && <TortieBase setter={updateWrapper} cat={cat} />}
-      {picker === 'torties-pattern' && <TortieSecond setter={updateWrapper} cat={cat} />}
-      {picker === 'torties-colour' && <TortieColour setter={updateWrapper} cat={cat} />}
+      {picker === 'torties-second' && <TortieSecond setter={updateWrapper} cat={cat} />}
     </main>
   )
 }
