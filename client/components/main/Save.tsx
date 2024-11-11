@@ -1,5 +1,5 @@
 import { randomBool, randomInt } from '../../store'
-import { peltPatterns, peltColours, skinColours, whitePatches, tortiePatterns, defaultUsableCat } from '../../../storage/dict'
+import { peltPatterns, peltColours, skinColours, whitePatches, tortiePatterns, defaultExportCat } from '../../../storage/dict'
 import { eyeColours } from '../pickers/Eyes'
 import CatData from '../../../models/Cat'
 
@@ -78,8 +78,8 @@ export function saveImage(canvas: HTMLCanvasElement) {
 }
 
 function saveJson(cat: CatData) {
-  const usableCat = {
-    ...defaultUsableCat,
+  const exportCat = {
+    ...defaultExportCat,
     moons: cat.moons,
     paralyzed: cat.paralyzed,
     pelt_name: cat.pelt_name,
@@ -101,7 +101,7 @@ function saveJson(cat: CatData) {
     skin: cat.skin,
   }
 
-  const blob = new Blob([JSON.stringify(usableCat, null, 2)], { type: 'application/json' })
+  const blob = new Blob([JSON.stringify(exportCat, null, 2)], { type: 'application/json' })
   const jsonurl = URL.createObjectURL(blob)
   // console.log(jsonurl)
   const link: HTMLAnchorElement = document.getElementById('savejson')

@@ -262,17 +262,17 @@ export const tortiePatterns = [
   'HEARTBEAT',
 ]
 
-export const defaultUsableCat = {
-  ID: '53',
-  name_prefix: 'Parsley',
-  name_suffix: 'blaze',
+export const defaultExportCat = {
+  ID: '##',
+  name_prefix: 'Wild',
+  name_suffix: 'rock',
   specsuffix_hidden: false,
   gender: 'female',
-  gender_align: 'female',
+  gender_align: 'nonbinary',
   birth_cooldown: 0,
   status: 'warrior',
   backstory: 'clan_founder',
-  moons: 20,
+  moons: 36,
   trait: 'charismatic',
   facets: '8,9,8,4',
   parent1: null,
