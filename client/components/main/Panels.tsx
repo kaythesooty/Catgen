@@ -27,8 +27,10 @@ export function LeftPanel({ choose, cat, setCat }: Props) {
       <p>{cat.skin}</p>
       <button onClick={() => choose('pelt')}>Pelt Options</button>
       <p>{cat.pelt_length}</p>
-      <p>{cat.pelt_name}</p>
-      <p>{cat.pelt_color}</p>
+      <p>
+        {`${cat.pelt_color} 
+        ${cat.pelt_name}`}
+      </p>
       <label>
         Sick: <input type="checkbox" checked={cat.sick} onChange={(e) => setCat({ ...cat, sick: e.target.checked })}></input>
       </label>
