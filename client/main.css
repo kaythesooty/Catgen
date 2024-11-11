@@ -63,3 +63,17 @@ p {
   margin-left: 10px;
   margin-right: 10px;
 }
+
+.smallborder {
+  border: solid black 2px;
+}
+
+.wide {
+  width: 100px;
+}
+
+.line {
+  background-color: black;
+  height: 2px;
+  margin: 10px;
+}

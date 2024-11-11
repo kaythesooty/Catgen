@@ -19,7 +19,7 @@ export function LeftPanel({ choose, cat, setCat }: Props) {
       </label>
       <br />
       <button onClick={() => choose('poses')}>Poses</button>
-      <p>{cat.pose}</p>
+      <br />
       <button onClick={() => choose('eyes')}>Eye Colour</button>
       <p>{cat.eye_colour}</p>
       {cat.eye_colour2 != 'null' && <p>{cat.eye_colour2}</p>}
@@ -27,8 +27,10 @@ export function LeftPanel({ choose, cat, setCat }: Props) {
       <p>{cat.pelt_color}</p>
       <button onClick={() => choose('skin')}>Skin Colour</button>
       <p>{cat.skin}</p>
-      <button onClick={() => choose('pattern')}>Pelt Pattern</button>
+      <button onClick={() => choose('pelt')}>Pelt Options</button>
+      <p>{cat.pelt_length}</p>
       <p>{cat.pelt_name}</p>
+      <p>{cat.pelt_color}</p>
       <label>
         Sick: <input type="checkbox" checked={cat.sick} onChange={(e) => setCat({ ...cat, sick: e.target.checked })}></input>
       </label>

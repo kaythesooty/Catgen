@@ -9,7 +9,7 @@ import { peltColours, skinColours, tortiePatterns, whitePatches } from '../../st
 import { eyeColours, Eyes } from './pickers/Eyes'
 import { Colour } from './pickers/Colour'
 import { Skin } from './pickers/Skin'
-import { Pattern } from './pickers/Pattern'
+import { Pelt } from './pickers/Pelt'
 import { White } from './pickers/White'
 import CatData from '../../models/Cat'
 import { TortieBase, TortieColour, TortieOptions, TortieSecond } from './pickers/Tortie'
@@ -74,6 +74,8 @@ export function Main() {
   const updateWrapper = (newCat: CatData) => {
     if (newCat.pelt_name === 'Tortie' && newCat.white_patches !== null) newCat.pelt_name = 'Calico'
     if (newCat.pelt_name === 'Calico' && newCat.white_patches === null) newCat.pelt_name = 'Tortie'
+    if (newCat.pelt_length === 'long' && newCat.sprite_adult < 9) newCat.sprite_adult = newCat.sprite_adult + 3
+    if (newCat.pelt_length !== 'long' && newCat.sprite_adult > 8) newCat.sprite_adult = newCat.sprite_adult - 3
     setCat(newCat)
   }
 
@@ -99,7 +101,7 @@ export function Main() {
       {picker === 'eyes' && <Eyes setter={updateWrapper} cat={cat} />}
       {picker === 'colour' && <Colour setter={updateWrapper} cat={cat} />}
       {picker === 'skin' && <Skin setter={updateWrapper} cat={cat} />}
-      {picker === 'pattern' && <Pattern setter={updateWrapper} cat={cat} />}
+      {picker === 'pelt' && <Pelt setter={updateWrapper} cat={cat} />}
       {picker === 'white' && <White setter={updateWrapper} cat={cat} />}
       {picker === 'torties' && <TortieOptions setter={updateWrapper} cat={cat} />}
       {picker === 'torties-base' && <TortieBase setter={updateWrapper} cat={cat} />}
