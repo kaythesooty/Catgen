@@ -27,6 +27,7 @@ export function Pelt({ setter, cat }: Props) {
   return (
     <>
       <div className="picker">
+        <h3>PELT COLOURS</h3>
         {peltColours.map((clr, i) => (
           <button key={i} onClick={() => setter({ ...cat, pelt_color: clr })}>
             {clr}
@@ -34,6 +35,7 @@ export function Pelt({ setter, cat }: Props) {
         ))}
 
         <div className="line"></div>
+        <h3>PELT PATTERN</h3>
 
         <button onClick={() => setter(randomTortie(false))}>Tortie</button>
         <button onClick={() => setter(randomTortie(true))}>Calico</button>
@@ -47,6 +49,7 @@ export function Pelt({ setter, cat }: Props) {
         ))}
 
         <div className="line"></div>
+        <h3>FUR LENGTH</h3>
         <button
           onClick={() => {
             setter({ ...cat, pelt_length: 'short' })
