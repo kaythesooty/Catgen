@@ -1,3 +1,4 @@
+import { ChangeEvent, FormEvent, useState } from 'react'
 import CatData from '../../../models/Cat'
 
 interface Props {
@@ -7,13 +8,63 @@ interface Props {
 }
 
 export function LeftPanel({ choose, cat, setCat }: Props) {
+  const [edit, setEdit] = useState(false)
+  const [catName, setCatName] = useState({ prefix: cat.name_prefix, suffix: cat.name_suffix })
+
   if (setCat === undefined) {
     return <h4>Cannot set cat! (Panels.tsx)</h4>
   }
+
+  const handleNameChange = (e: FormEvent) => {
+    e.preventDefault()
+    setCat({ ...cat, name_prefix: catName.prefix, name_suffix: catName.suffix })
+    setEdit(!edit)
+  }
+
+  const handleChange = (evt: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = evt.target
+    setCatName((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
+  }
+
   return (
     <aside className="panel">
-      Left panel
-      <br />
+      <h3 className="m0">Left panel</h3>
+      {!edit && (
+        <p className="m0">
+          <button
+            onClick={() => {
+              setEdit(!edit)
+            }}
+          >
+            Edit
+          </button>{' '}
+          {cat.name_prefix}
+          {cat.name_suffix}
+        </p>
+      )}
+      {edit && (
+        <form onSubmit={handleNameChange}>
+          <button type="submit">Done</button>
+          <br />
+          <input
+            id="prefix"
+            name="prefix"
+            placeholder="prefix (eg. Spider, Fire)"
+            defaultValue={catName.prefix}
+            onChange={handleChange}
+          ></input>
+          <input
+            id="suffix"
+            name="suffix"
+            placeholder="suffix (eg. tail, heart)"
+            defaultValue={catName.suffix}
+            onChange={handleChange}
+          ></input>
+        </form>
+      )}
       <label>
         Age: <input type="number" min={0} max={512} value={cat.moons} onChange={(e) => setCat({ ...cat, moons: +e.target.value })}></input>
       </label>
@@ -49,7 +100,7 @@ export function LeftPanel({ choose, cat, setCat }: Props) {
 export function RightPanel({ choose, cat }: Props) {
   return (
     <aside className="panel">
-      Right Panel
+      <h3 className="m0">Right Panel</h3>
       <br />
       <button onClick={() => choose('white')}>White Patches</button>
       <p>{cat.white_patches != null ? cat.white_patches : `-----`}</p>
