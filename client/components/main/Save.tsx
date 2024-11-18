@@ -69,13 +69,13 @@ export function randomiseCat(): CatData {
   return cat
 }
 
-export function saveImage(canvas: HTMLCanvasElement) {
+export function saveImage(canvas: HTMLCanvasElement, cat: CatData) {
   console.log(canvas)
   canvas.toBlob((blob) => {
     const imgurl = URL.createObjectURL(blob)
     const link: HTMLAnchorElement = document.getElementById('save')
     link.href = imgurl
-    link.download = 'Generated Cat'
+    link.download = `${cat.name_prefix}${cat.name_suffix}`
     link.click()
     URL.revokeObjectURL(imgurl)
   })
@@ -84,6 +84,8 @@ export function saveImage(canvas: HTMLCanvasElement) {
 function saveJson(cat: CatData) {
   const exportCat = {
     ...defaultExportCat,
+    name_prefix: cat.name_prefix,
+    name_suffix: cat.name_suffix,
     moons: cat.moons,
     paralyzed: cat.paralyzed,
     pelt_name: cat.pelt_name,
@@ -110,7 +112,7 @@ function saveJson(cat: CatData) {
   // console.log(jsonurl)
   const link: HTMLAnchorElement = document.getElementById('savejson')
   link.href = jsonurl
-  link.download = 'Generated Cat'
+  link.download = `${cat.name_prefix}${cat.name_suffix}`
   link.click()
   URL.revokeObjectURL(jsonurl)
 }
@@ -126,7 +128,7 @@ export function Save({ cat, catvas, catobj }: Props) {
       <button className="save" onClick={() => saveJson(catobj)}>
         Save JSON
       </button>
-      <button className="save" onClick={() => saveImage(catvas)}>
+      <button className="save" onClick={() => saveImage(catvas, catobj)}>
         Save as Image
       </button>
     </div>
