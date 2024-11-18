@@ -29,6 +29,12 @@ export function LeftPanel({ choose, cat, setCat }: Props) {
     }))
   }
 
+  const sexChange = () => {
+    cat.gender == 'male'
+      ? setCat({ ...cat, gender: 'female', gender_align: 'female' })
+      : setCat({ ...cat, gender: 'male', gender_align: 'male' })
+  }
+
   return (
     <aside className="panel">
       <h3 className="m0">Left panel</h3>
@@ -65,6 +71,16 @@ export function LeftPanel({ choose, cat, setCat }: Props) {
           ></input>
         </form>
       )}
+      <p>
+        <button onClick={sexChange}>Swap</button> {cat.gender}
+      </p>
+      <select value={cat.gender_align} onChange={(e) => setCat({ ...cat, gender_align: e.target.value })}>
+        <option value={'male'}>Male</option>
+        <option value={'female'}>Female</option>
+        <option value={'nonbinary'}>Non-binary</option>
+        <option>Custom...</option>
+      </select>
+      <br />
       <label>
         Age: <input type="number" min={0} max={512} value={cat.moons} onChange={(e) => setCat({ ...cat, moons: +e.target.value })}></input>
       </label>

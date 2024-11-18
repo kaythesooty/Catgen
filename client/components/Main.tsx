@@ -24,6 +24,8 @@ export function Main() {
   const [cat, setCat] = useState(randomiseCat)
   const [picker, setPicker] = useState('default')
 
+  console.log(cat.gender, cat.gender_align)
+
   const draw = (context: CanvasRenderingContext2D) => {
     const pose = getPose(cat)
     // Calculate spritesheet coords
