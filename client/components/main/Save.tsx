@@ -34,6 +34,10 @@ const defaultCat: CatData = {
 
 export function randomiseCat(): CatData {
   const cat = { ...defaultCat }
+  cat.name_prefix = 'Blind'
+  cat.name_suffix = 'sky'
+  cat.gender = randomBool() ? 'female' : 'male'
+  cat.gender_align = cat.gender
   cat.moons = randomInt(0, 180)
   cat.pelt_name = peltPatterns[randomInt(0, peltPatterns.length - 1)]
   cat.pelt_color = peltColours[randomInt(0, peltColours.length - 1)]
