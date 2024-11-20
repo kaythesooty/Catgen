@@ -3,6 +3,7 @@ export default interface CatData {
   name_suffix: string
   gender: string
   gender_align: string
+  status: string
   moons: number
   paralyzed: boolean
   sick: boolean

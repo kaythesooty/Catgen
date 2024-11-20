@@ -22,18 +22,21 @@ export function Canvas({ draw, catSetter, cat }: Props) {
       <div className="flex-container">
         <h2 className="catname">
           {cat.name_prefix}
-          {cat.moons < 6 ? 'kit' : cat.name_suffix}
+          {cat.name_suffix}
         </h2>
-        <select>
+        <select value={cat.status} onChange={(e) => catSetter({ ...cat, status: e.target.value })}>
           <option value={'kitten'}>Kitten</option>
           <option value={'apprentice'}>Apprentice</option>
-          <option value={'medcat-app'}>Medicine-cat Apprentice</option>
+          <option value={'medicine cat apprentice'}>Medicine Cat Apprentice</option>
           <option value={'warrior'} selected>
             Warrior
           </option>
-          <option value={'medcat'}>Medicine-cat</option>
+          <option value={'medicine cat'}>Medicine Cat</option>
           <option value={'deputy'}>Deputy</option>
           <option value={'leader'}>Leader</option>
+          <option value={'elder'}>Elder</option>
+          <option value={'mediator apprentice'}>Mediator Apprentice</option>
+          <option value={'mediator'}>Mediator</option>
         </select>
         <button>Gender</button>
       </div>
