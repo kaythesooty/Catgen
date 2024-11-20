@@ -75,8 +75,10 @@ export function LeftPanel({ choose, cat, setCat }: Props) {
         <button onClick={sexChange}>Swap</button> {cat.gender}
       </p>
       <select value={cat.gender_align} onChange={(e) => setCat({ ...cat, gender_align: e.target.value })}>
-        <option value={'male'}>Male</option>
-        <option value={'female'}>Female</option>
+        {cat.gender === 'male' && <option value={'male'}>Male</option>}
+        {cat.gender === 'female' && <option value={'female'}>Female</option>}
+        {cat.gender === 'female' && <option value={'trans male'}>Male</option>}
+        {cat.gender === 'male' && <option value={'trans female'}>Female</option>}
         <option value={'nonbinary'}>Non-binary</option>
         <option>Custom...</option>
       </select>
@@ -93,7 +95,7 @@ export function LeftPanel({ choose, cat, setCat }: Props) {
       <button onClick={() => choose('skin')}>Skin Colour</button>
       <p>{cat.skin}</p>
       <button onClick={() => choose('pelt')}>Pelt Options</button>
-      <p>{cat.pelt_length}</p>
+      <p className="m0">{cat.pelt_length}</p>
       <p>
         {`${cat.pelt_color} 
         ${cat.pelt_name}`}

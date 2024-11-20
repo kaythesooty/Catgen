@@ -24,7 +24,7 @@ export function Main() {
   const [cat, setCat] = useState(randomiseCat)
   const [picker, setPicker] = useState('default')
 
-  console.log(cat.status)
+  console.log(cat.gender_align)
 
   const draw = (context: CanvasRenderingContext2D) => {
     const pose = getPose(cat)
@@ -95,7 +95,7 @@ export function Main() {
   return (
     <main>
       <div className="flex-container">
-        <LeftPanel choose={handlePicker} cat={cat} setCat={setCat} />
+        <LeftPanel choose={handlePicker} cat={cat} setCat={updateWrapper} />
         <div className="flex-container flex-column">
           <Canvas draw={draw} catSetter={randomCat} cat={cat} />
         </div>
