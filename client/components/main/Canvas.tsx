@@ -17,12 +17,32 @@ export function Canvas({ draw, catSetter, cat }: Props) {
     draw(ctx as CanvasRenderingContext2D)
   }, [draw])
 
+  let suffix = cat.name_suffix
+
+  switch (cat.status) {
+    case 'kitten':
+      suffix = 'kit'
+      break
+    case 'apprentice':
+      suffix = 'paw'
+      break
+    case 'medicine cat apprentice':
+      suffix = 'paw'
+      break
+    case 'mediator apprentice':
+      suffix = 'paw'
+      break
+    case 'leader':
+      suffix = 'star'
+      break
+  }
+
   return (
     <>
       <div className="flex-container">
         <h2 className="catname">
           {cat.name_prefix}
-          {cat.name_suffix}
+          {suffix}
         </h2>
         <select value={cat.status} onChange={(e) => catSetter({ ...cat, status: e.target.value })}>
           <option value={'kitten'}>Kitten</option>

@@ -66,6 +66,11 @@ export function randomiseCat(): CatData {
     cat.sprite_adult = cat.sprite_adult + 3
     cat.sprite_para_adult = 16
   }
+  if (cat.moons < 6) cat.status = 'kitten'
+  else if (cat.moons < 12 && randomInt(1, 5) === 5) cat.status = 'medicine cat apprentice'
+  else if (cat.moons < 12) cat.status = 'apprentice'
+  else if (randomInt(1, 20) === 20) cat.status = 'leader'
+  else cat.status = 'warrior'
 
   return cat
 }
@@ -87,6 +92,9 @@ function saveJson(cat: CatData) {
     ...defaultExportCat,
     name_prefix: cat.name_prefix,
     name_suffix: cat.name_suffix,
+    gender: cat.gender,
+    gender_align: cat.gender_align,
+    status: cat.status,
     moons: cat.moons,
     paralyzed: cat.paralyzed,
     pelt_name: cat.pelt_name,
