@@ -81,6 +81,8 @@ export function Main() {
     if (newCat.pelt_name === 'Calico' && newCat.white_patches === null) newCat.pelt_name = 'Tortie'
     if (newCat.pelt_length === 'long' && newCat.sprite_adult < 9) newCat.sprite_adult = newCat.sprite_adult + 3
     if (newCat.pelt_length !== 'long' && newCat.sprite_adult > 8) newCat.sprite_adult = newCat.sprite_adult - 3
+    if (newCat.moons < 6) newCat.status = 'kitten'
+    if (newCat.moons >= 6 && newCat.moons < 13 && cat.moons < 6) newCat.status = 'apprentice'
     setCat(newCat)
   }
 
