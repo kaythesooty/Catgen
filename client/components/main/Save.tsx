@@ -2,6 +2,7 @@ import { randomBool, randomInt } from '../../store'
 import { peltPatterns, peltColours, skinColours, whitePatches, tortiePatterns, defaultExportCat } from '../../../storage/dict'
 import { eyeColours } from '../pickers/Eyes'
 import CatData from '../../../models/Cat'
+import names from '../../../storage/names'
 
 interface Props {
   cat: (cat: CatData) => void
@@ -10,6 +11,11 @@ interface Props {
 }
 
 const defaultCat: CatData = {
+  name_prefix: 'Crow',
+  name_suffix: 'break',
+  gender: 'female',
+  gender_align: 'nonbinary',
+  status: 'warrior',
   moons: 37,
   paralyzed: false,
   sick: false,
