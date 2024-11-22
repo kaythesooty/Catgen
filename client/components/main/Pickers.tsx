@@ -1,7 +1,7 @@
 export function Pickers() {
   return (
     <p className="picker">
-      Pickers will go here but this is just a placeholder component
+      Choose an option from one of the panels to customise your cat, or hit random to generate a new one!
     </p>
   )
 }
