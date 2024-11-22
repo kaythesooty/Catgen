@@ -2,7 +2,7 @@ import { randomBool, randomInt } from '../../store'
 import { peltPatterns, peltColours, skinColours, whitePatches, tortiePatterns, defaultExportCat } from '../../../storage/dict'
 import { eyeColours } from '../pickers/Eyes'
 import CatData from '../../../models/Cat'
-import names from '../../../storage/names'
+import names from '../../../storage/names.ts'
 
 interface Props {
   cat: (cat: CatData) => void
@@ -76,14 +76,40 @@ export function randomiseCat(): CatData {
   else if (randomInt(1, 20) === 20) cat.status = 'leader'
   else cat.status = 'warrior'
 
+  switch (randomInt(1, 4)) {
+    case 1:
+      cat.name_prefix = names.normalPrefixes[randomInt(1, names.normalPrefixes.length) - 1]
+      break
+    case 2:
+      cat.name_prefix = names.colourPrefixes[cat.pelt_color][randomInt(1, names.colourPrefixes[cat.pelt_color].length) - 1]
+      break
+    case 3:
+      cat.name_prefix = names.eyePrefixes[cat.eye_colour][randomInt(1, names.eyePrefixes[cat.eye_colour].length) - 1]
+      break
+    case 4:
+      cat.name_prefix = names.animalPrefixes[randomInt(1, names.animalPrefixes.length) - 1]
+  }
+
+  switch (randomInt(1, 3)) {
+    case 1:
+      cat.name_suffix = names.normalSuffixes[randomInt(0, names.normalSuffixes.length - 1)]
+      break
+    case 2:
+      cat.name_suffix = names.peltSuffixes[cat.pelt_name][randomInt(0, names.peltSuffixes[cat.pelt_name].length - 1)]
+      break
+    case 3:
+      cat.name_suffix = names.animalSuffixes[randomInt(0, names.animalSuffixes.length - 1)]
+  }
+
   return cat
 }
 
 export function saveImage(canvas: HTMLCanvasElement, cat: CatData) {
   console.log(canvas)
   canvas.toBlob((blob) => {
+    if (blob === null) return
     const imgurl = URL.createObjectURL(blob)
-    const link: HTMLAnchorElement = document.getElementById('save')
+    const link: HTMLAnchorElement = document.getElementById('save') as HTMLAnchorElement
     link.href = imgurl
     link.download = `${cat.name_prefix}${cat.name_suffix}`
     link.click()
@@ -123,7 +149,7 @@ function saveJson(cat: CatData) {
   const blob = new Blob([JSON.stringify(exportCat, null, 2)], { type: 'application/json' })
   const jsonurl = URL.createObjectURL(blob)
   // console.log(jsonurl)
-  const link: HTMLAnchorElement = document.getElementById('savejson')
+  const link: HTMLAnchorElement = document.getElementById('savejson') as HTMLAnchorElement
   link.href = jsonurl
   link.download = `${cat.name_prefix}${cat.name_suffix}`
   link.click()
