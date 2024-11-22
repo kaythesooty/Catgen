@@ -39,9 +39,7 @@ const defaultCat: CatData = {
 }
 
 export function randomiseCat(): CatData {
-  const cat = { ...defaultCat }
-  cat.name_prefix = 'Blind'
-  cat.name_suffix = 'sky'
+  const cat: CatData = { ...defaultCat }
   cat.gender = randomBool() ? 'female' : 'male'
   cat.gender_align = cat.gender
   cat.status = 'warrior'

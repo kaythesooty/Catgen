@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from 'react'
-import { Save, saveImage } from './Save'
+import { useRef, useEffect } from 'react'
+import { Save } from './Save'
 import CatData from '../../../models/Cat'
 
 interface Props {
@@ -58,7 +58,6 @@ export function Canvas({ draw, catSetter, cat }: Props) {
           <option value={'mediator apprentice'}>Mediator Apprentice</option>
           <option value={'mediator'}>Mediator</option>
         </select>
-        <button>Gender</button>
       </div>
       <canvas ref={canvasRef} height={420} width={420}></canvas>
       <Save cat={catSetter} catvas={canvasRef.current} catobj={cat} />
