@@ -31,6 +31,11 @@ export function LeftPanel({ choose, cat, setCat }: Props) {
     }))
   }
 
+  const handleCancel = () => {
+    setEdit(false)
+    setCatName({prefix: cat.name_prefix, suffix: cat.name_suffix})
+  }
+
   const sexChange = () => {
     cat.gender == 'male'
       ? setCat({ ...cat, gender: 'female', gender_align: 'female' })
@@ -56,6 +61,7 @@ export function LeftPanel({ choose, cat, setCat }: Props) {
       {edit && (
         <form onSubmit={handleNameChange}>
           <button type="submit">Done</button>
+          <button onClick={handleCancel}>Cancel</button>
           <br />
           <input
             id="prefix"
