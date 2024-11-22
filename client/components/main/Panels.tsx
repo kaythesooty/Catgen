@@ -80,7 +80,6 @@ export function LeftPanel({ choose, cat, setCat }: Props) {
         {cat.gender === 'female' && <option value={'trans male'}>Male</option>}
         {cat.gender === 'male' && <option value={'trans female'}>Female</option>}
         <option value={'nonbinary'}>Non-binary</option>
-        <option>Custom...</option>
       </select>
       <br />
       <label>
