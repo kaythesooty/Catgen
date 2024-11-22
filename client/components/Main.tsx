@@ -11,7 +11,7 @@ import { Skin } from './pickers/Skin'
 import { Pelt } from './pickers/Pelt'
 import { White } from './pickers/White'
 import CatData from '../../models/Cat'
-import { TortieBase, TortieColour, TortieOptions, TortieSecond } from './pickers/Tortie'
+import { TortieBase, TortieOptions, TortieSecond } from './pickers/Tortie'
 
 const outline = document.getElementById('outline')
 const eyes = document.getElementById('eyes')
@@ -23,8 +23,6 @@ const tortie = document.getElementById('tortie-masks')
 export function Main() {
   const [cat, setCat] = useState(randomiseCat)
   const [picker, setPicker] = useState('default')
-
-  console.log(cat.gender_align)
 
   const draw = (context: CanvasRenderingContext2D) => {
     const pose = getPose(cat)
