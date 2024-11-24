@@ -109,6 +109,19 @@ export function randomiseCat(): CatData {
       cat.name_suffix = names.animalSuffixes[randomInt(0, names.animalSuffixes.length - 1)]
   }
 
+  let inappropriate = false
+
+  names.inappropriateNames.forEach((nm) => {
+    if (nm === cat.name_prefix.toLowerCase() + cat.name_suffix || cat.name_prefix.toLowerCase() === cat.name_suffix) {
+      inappropriate = true
+    }
+  })
+
+  if (inappropriate) {
+    cat.name_prefix = defaultCat.name_prefix
+    cat.name_suffix = defaultCat.name_suffix
+  }
+
   return cat
 }
 
