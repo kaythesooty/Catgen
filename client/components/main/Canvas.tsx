@@ -47,16 +47,16 @@ export function Canvas({ draw, catSetter, cat }: Props) {
         <select value={cat.status} onChange={(e) => catSetter({ ...cat, status: e.target.value })}>
           <option value={'kitten'}>Kitten</option>
           <option value={'apprentice'}>Apprentice</option>
+          <option value={'mediator apprentice'}>Mediator Apprentice</option>
           <option value={'medicine cat apprentice'}>Medicine Cat Apprentice</option>
           <option value={'warrior'} selected>
             Warrior
           </option>
+          <option value={'mediator'}>Mediator</option>
           <option value={'medicine cat'}>Medicine Cat</option>
           <option value={'deputy'}>Deputy</option>
           <option value={'leader'}>Leader</option>
           <option value={'elder'}>Elder</option>
-          <option value={'mediator apprentice'}>Mediator Apprentice</option>
-          <option value={'mediator'}>Mediator</option>
         </select>
       </div>
       <canvas ref={canvasRef} height={420} width={420}></canvas>
