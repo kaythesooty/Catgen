@@ -38,6 +38,14 @@ const defaultCat: CatData = {
   skin: 'DARKSALMON',
 }
 
+function doTortie(cat: CatData) {
+  cat.white_patches != null ? (cat.pelt_name = 'Calico') : (cat.pelt_name = 'Tortie')
+  cat.pattern = tortiePatterns[randomInt(0, tortiePatterns.length - 1)]
+  cat.tortie_base = peltPatterns[randomInt(0, peltPatterns.length - 1)].toLowerCase()
+  cat.tortie_color = peltColours[randomInt(0, peltColours.length - 1)]
+  cat.tortie_pattern = peltPatterns[randomInt(0, peltPatterns.length - 1)].toLowerCase()
+}
+
 export function randomiseCat(): CatData {
   const cat: CatData = { ...defaultCat }
   cat.gender = randomBool() ? 'female' : 'male'
@@ -46,11 +54,13 @@ export function randomiseCat(): CatData {
   cat.moons = randomInt(0, 180)
   cat.pelt_name = peltPatterns[randomInt(0, peltPatterns.length - 1)]
   cat.pelt_color = peltColours[randomInt(0, peltColours.length - 1)]
+
   if (randomInt(1, 3) == 3) {
     cat.pelt_length = 'long'
   } else if (randomBool()) {
     cat.pelt_length = 'short'
   } else cat.pelt_length = 'medium'
+
   cat.sprite_kitten = randomInt(0, 2)
   cat.sprite_adolescent = randomInt(3, 5)
   cat.sprite_adult = randomInt(6, 8)
@@ -59,17 +69,15 @@ export function randomiseCat(): CatData {
   cat.reverse = randomBool()
   cat.skin = skinColours[randomInt(0, skinColours.length - 1)]
   cat.white_patches = randomInt(1, 3) === 3 ? whitePatches[randomInt(1, whitePatches.length - 1)] : null
-  if (randomInt(1, 4) === 4) {
-    cat.white_patches != null ? (cat.pelt_name = 'Calico') : (cat.pelt_name = 'Tortie')
-    cat.pattern = tortiePatterns[randomInt(0, tortiePatterns.length - 1)]
-    cat.tortie_base = peltPatterns[randomInt(0, peltPatterns.length - 1)].toLowerCase()
-    cat.tortie_color = peltColours[randomInt(0, peltColours.length - 1)]
-    cat.tortie_pattern = peltPatterns[randomInt(0, peltPatterns.length - 1)].toLowerCase()
-  }
+
+  if (randomInt(1, 4) === 4 && cat.gender === 'female') doTortie(cat)
+  else if (randomInt(1, 20) === 20 && cat.gender === 'male') doTortie(cat)
+
   if (cat.pelt_length == 'long') {
     cat.sprite_adult = cat.sprite_adult + 3
     cat.sprite_para_adult = 16
   }
+
   if (cat.moons < 6) cat.status = 'kitten'
   else if (cat.moons < 12 && randomInt(1, 5) === 5) cat.status = 'medicine cat apprentice'
   else if (cat.moons < 12) cat.status = 'apprentice'
