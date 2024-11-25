@@ -1,5 +1,5 @@
 import { randomBool, randomInt } from '../../store'
-import { peltPatterns, peltColours, skinColours, whitePatches, tortiePatterns, defaultExportCat } from '../../../storage/dict'
+import { peltPatterns, peltColours, skinColours, whitePatches, tortiePatterns, defaultExportCat, tintColours } from '../../../storage/dict'
 import { eyeColours } from '../pickers/Eyes'
 import CatData from '../../../models/Cat'
 import names from '../../../storage/names.ts'
@@ -70,6 +70,10 @@ export function randomiseCat(): CatData {
   cat.skin = skinColours[randomInt(0, skinColours.length - 1)]
   cat.white_patches = randomInt(1, 3) === 3 ? whitePatches[randomInt(1, whitePatches.length - 1)] : null
 
+  if (randomInt(1, 4) === 4) {
+    cat.tint = tintColours[randomInt(0, tintColours.length - 1)]
+  } else cat.tint = null
+
   if (randomInt(1, 4) === 4 && cat.gender === 'female') doTortie(cat)
   else if (randomInt(1, 20) === 20 && cat.gender === 'male') doTortie(cat)
 
@@ -121,6 +125,8 @@ export function randomiseCat(): CatData {
     cat.name_prefix = defaultCat.name_prefix
     cat.name_suffix = defaultCat.name_suffix
   }
+
+  cat.tint != null && console.log(cat.tint)
 
   return cat
 }

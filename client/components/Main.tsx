@@ -5,20 +5,22 @@ import { randomiseCat } from './main/Save'
 import { calculateCoords, getPose } from '../store'
 import { PosePicker } from './pickers/Pose'
 import { Pickers } from './main/Pickers'
-import { peltColours, skinColours, tortiePatterns, whitePatches } from '../../storage/dict'
+import { peltColours, skinColours, tortiePatterns, whitePatches, tintColours } from '../../storage/dict'
 import { eyeColours, Eyes } from './pickers/Eyes'
 import { Skin } from './pickers/Skin'
 import { Pelt } from './pickers/Pelt'
 import { White } from './pickers/White'
 import CatData from '../../models/Cat'
 import { TortieBase, TortieOptions, TortieSecond } from './pickers/Tortie'
+import { Tint } from './pickers/Tint'
 
-const outline = document.getElementById('outline')
-const eyes = document.getElementById('eyes')
-const eyes2 = document.getElementById('eyes2')
-const skin = document.getElementById('skin')
-const white = document.getElementById('white-patches')
-const tortie = document.getElementById('tortie-masks')
+const outline = document.getElementById('outline') as HTMLImageElement
+const eyes = document.getElementById('eyes') as HTMLImageElement
+const eyes2 = document.getElementById('eyes2') as HTMLImageElement
+const skin = document.getElementById('skin') as HTMLImageElement
+const white = document.getElementById('white-patches') as HTMLImageElement
+const tortie = document.getElementById('tortie-masks') as HTMLImageElement
+const tints = document.getElementById('tints') as HTMLImageElement
 
 export function Main() {
   const [cat, setCat] = useState(randomiseCat)
@@ -35,6 +37,7 @@ export function Main() {
     let whitePos = calculateCoords(whitePatches.indexOf(cat.white_patches), 14, 10, 150, 350)
     let tortiePos = calculateCoords(tortiePatterns.indexOf(cat.pattern), 10, 5, 150, 350)
     let tortieColourPos = calculateCoords(peltColours.indexOf(cat.tortie_color), 7, 3, 150, 350)
+    let tintPos = calculateCoords(tintColours.indexOf(cat.tint), 4, 2, 150, 350)
 
     // Calculate sprites based on pose
     colourPos = colourPos.map((clr, idx) => clr + outlinePos[idx])
@@ -44,6 +47,7 @@ export function Main() {
     whitePos = whitePos.map((clr, idx) => clr + outlinePos[idx])
     tortiePos = tortiePos.map((clr, idx) => clr + outlinePos[idx])
     tortieColourPos = tortieColourPos.map((clr, idx) => clr + outlinePos[idx])
+    tintPos = tintPos.map((clr, idx) => clr + outlinePos[idx])
 
     // ---- DRAW CAT ----
     // Initialise canvas
@@ -66,6 +70,10 @@ export function Main() {
     } else {
       context.drawImage(document.getElementById(cat.pelt_name.toLowerCase()), colourPos[0], colourPos[1], 50, 50, 10, 10, 400, 400)
     }
+
+    context.globalCompositeOperation = 'multiply'
+    context.drawImage(tints, tintPos[0], tintPos[1], 50, 50, 10, 10, 400, 400)
+    context.globalCompositeOperation = 'source-over'
 
     context.drawImage(white, whitePos[0], whitePos[1], 50, 50, 10, 10, 400, 400)
     context.drawImage(outline, outlinePos[0], outlinePos[1], 50, 50, 10, 10, 400, 400)
@@ -107,6 +115,7 @@ export function Main() {
       {picker === 'skin' && <Skin setter={updateWrapper} cat={cat} />}
       {picker === 'pelt' && <Pelt setter={updateWrapper} cat={cat} />}
       {picker === 'white' && <White setter={updateWrapper} cat={cat} />}
+      {picker === 'tint' && <Tint setter={updateWrapper} cat={cat} />}
       {picker === 'torties' && <TortieOptions setter={updateWrapper} cat={cat} />}
       {picker === 'torties-base' && <TortieBase setter={updateWrapper} cat={cat} />}
       {picker === 'torties-second' && <TortieSecond setter={updateWrapper} cat={cat} />}

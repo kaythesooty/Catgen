@@ -24,4 +24,5 @@ export default interface CatData {
   tortie_color: string | null
   tortie_pattern: string | null
   skin: string
+  tint: string | null
 }

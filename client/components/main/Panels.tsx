@@ -15,7 +15,8 @@ export function LeftPanel({ choose, cat, setCat }: Props) {
     return <h4>Cannot set cat! (Panels.tsx)</h4>
   }
 
-  if (cat.name_prefix !== catName.prefix || cat.name_suffix !== catName.suffix) setCatName({prefix: cat.name_prefix, suffix: cat.name_suffix})
+  if (cat.name_prefix !== catName.prefix || cat.name_suffix !== catName.suffix)
+    setCatName({ prefix: cat.name_prefix, suffix: cat.name_suffix })
 
   const handleNameChange = (e: FormEvent) => {
     e.preventDefault()
@@ -33,7 +34,7 @@ export function LeftPanel({ choose, cat, setCat }: Props) {
 
   const handleCancel = () => {
     setEdit(false)
-    setCatName({prefix: cat.name_prefix, suffix: cat.name_suffix})
+    setCatName({ prefix: cat.name_prefix, suffix: cat.name_suffix })
   }
 
   const sexChange = () => {
@@ -128,7 +129,9 @@ export function RightPanel({ choose, cat }: Props) {
       <h3 className="m0">Right Panel</h3>
       <br />
       <button onClick={() => choose('white')}>White Patches</button>
-      <p>{cat.white_patches != null ? cat.white_patches : `-----`}</p>
+      <p>{cat.white_patches != null ? cat.white_patches : `NONE`}</p>
+      <button onClick={() => choose('tint')}>Tint</button>
+      <p>{cat.tint != null ? cat.tint : `none`}</p>
       {cat.tortie_base != null && <button onClick={() => choose('torties')}>Tortie Pattern</button>}
       <p>{cat.pattern != null && cat.pattern}</p>
       {cat.tortie_base != null && <button onClick={() => choose('torties-base')}>Tortie Base Options</button>}

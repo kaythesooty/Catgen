@@ -328,3 +328,5 @@ export const defaultExportCat = {
   prevent_fading: false,
   favourite: false,
 }
+
+export const tintColours = ['pink', 'gray', 'red', 'black', 'orange', 'yellow', 'purple', 'blue']
