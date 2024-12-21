@@ -1,5 +1,3 @@
-// Technically this shouldn't even be here, this is just for dev purposes
-
 import CatData from '../../../models/Cat'
 
 interface Props {
