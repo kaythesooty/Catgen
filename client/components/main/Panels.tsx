@@ -15,6 +15,14 @@ export function LeftPanel({ choose, cat, setCat }: Props) {
     return <h4>Cannot set cat! (Panels.tsx)</h4>
   }
 
+  console.log("reloaded", catName)
+  console.log(cat.name_prefix + cat.name_suffix)
+
+  const editmode = () => {
+    setCatName({prefix: cat.name_prefix, suffix: cat.name_suffix})
+    setEdit(true)
+  }
+
   const handleNameChange = (e: FormEvent) => {
     e.preventDefault()
     setCat({ ...cat, name_prefix: catName.prefix, name_suffix: catName.suffix })
@@ -46,9 +54,7 @@ export function LeftPanel({ choose, cat, setCat }: Props) {
       {!edit && (
         <p className="m0">
           <button
-            onClick={() => {
-              setEdit(!edit)
-            }}
+            onClick={editmode}
           >
             Edit
           </button>{' '}
