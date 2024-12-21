@@ -15,9 +15,6 @@ export function LeftPanel({ choose, cat, setCat }: Props) {
     return <h4>Cannot set cat! (Panels.tsx)</h4>
   }
 
-  if (cat.name_prefix !== catName.prefix || cat.name_suffix !== catName.suffix)
-    setCatName({ prefix: cat.name_prefix, suffix: cat.name_suffix })
-
   const handleNameChange = (e: FormEvent) => {
     e.preventDefault()
     setCat({ ...cat, name_prefix: catName.prefix, name_suffix: catName.suffix })
@@ -26,9 +23,9 @@ export function LeftPanel({ choose, cat, setCat }: Props) {
 
   const handleChange = (evt: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = evt.target
-    setCatName((prev) => ({
-      ...prev,
-      [name]: value,
+    setCatName(() => ({
+      ...catName,
+      [name]: value
     }))
   }
 
