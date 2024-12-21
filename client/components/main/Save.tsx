@@ -36,6 +36,7 @@ const defaultCat: CatData = {
   tortie_color: null,
   tortie_pattern: null,
   skin: 'DARKSALMON',
+  tint: 'none'
 }
 
 function doTortie(cat: CatData) {
@@ -145,12 +146,43 @@ export function saveImage(canvas: HTMLCanvasElement, cat: CatData) {
 }
 
 function saveJson(cat: CatData) {
+  const pronouns = [
+    {
+      subject: "they",
+      object: "them",
+      poss: "thier",
+      inposs: "theirs",
+      self: "themselves",
+      conju: 1
+    }
+  ]
+
+  if (cat.gender_align == "male" || cat.gender_align == "trans male") {
+    pronouns[0] = {
+      subject: "he",
+      object: "him",
+      poss: "his",
+      inposs: "his",
+      self: "himself",
+      conju: 2
+  }} else if (cat.gender_align == "female" || cat.gender_align == "trans female") {
+    pronouns[0] = {
+      subject: "she",
+      object: "her",
+      poss: "her",
+      inposs: "hers",
+      self: "herself",
+      conju: 2
+  }}
+
+
   const exportCat = {
     ...defaultExportCat,
     name_prefix: cat.name_prefix,
     name_suffix: cat.name_suffix,
     gender: cat.gender,
     gender_align: cat.gender_align,
+    pronouns,
     status: cat.status,
     moons: cat.moons,
     paralyzed: cat.paralyzed,
@@ -171,9 +203,10 @@ function saveJson(cat: CatData) {
     tortie_color: cat.tortie_color,
     tortie_pattern: cat.tortie_pattern,
     skin: cat.skin,
+    tint: cat.tint,
   }
 
-  const blob = new Blob([JSON.stringify(exportCat, null, 2)], { type: 'application/json' })
+  const blob = new Blob([JSON.stringify(exportCat, null, 4)], { type: 'application/json' })
   const jsonurl = URL.createObjectURL(blob)
   // console.log(jsonurl)
   const link: HTMLAnchorElement = document.getElementById('savejson') as HTMLAnchorElement

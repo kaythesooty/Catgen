@@ -269,6 +269,16 @@ export const defaultExportCat = {
   specsuffix_hidden: false,
   gender: 'female',
   gender_align: 'nonbinary',
+  pronouns: [
+    {
+      subject: "they",
+      object: "them",
+      poss: "thier",
+      inposs: "theirs",
+      self: "themselves",
+      conju: 1
+    }
+  ],
   birth_cooldown: 0,
   status: 'warrior',
   backstory: 'clan_founder',
