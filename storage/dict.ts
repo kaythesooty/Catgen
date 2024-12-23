@@ -55,6 +55,20 @@ export const tintColours = [
   'pink', 'gray', 'red', 'black', 'orange', 'yellow', 'purple', 'blue'
 ]
 
+export const traits = [
+  'troublesome', 'lonesome', 'fierce', 'bloodthirsty', 'cold', 'childish', 'playful',
+  'charismatic', 'bold', 'daring', 'nervous', 'righteous', 'insecure', 'strict',
+  'compassionate', 'thoughtful', 'ambitious', 'confident', 'adventurous', 'calm',
+  'gloomy', 'faithful', 'loving', 'loyal', 'responsible', 'shameless', 'sneaky',
+  'strange', 'vengeful', 'wise', 'arrogant', 'competitive', 'grumpy', 'cunning',
+  'oblivious', 'flamboyant', 'rebellious', 'sincere', 'careful'
+]
+
+export const traitsKitten = [
+  'unruly', 'shy', 'impulsive', 'bullying', 'attention-seeker', 'charming', 'self-conscious',
+  'noisy', 'skittish', 'daydreamer', 'fearless', 'sweet', 'know-it-all', 'polite', 'bossy'
+]
+
 export const defaultExportCat = {
   ID: '##',
   name_prefix: 'Wild',
