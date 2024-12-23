@@ -83,6 +83,8 @@ export function LeftPanel({ choose, cat, setCat }: Props) {
           ></input>
         </form>
       )}
+      <button onClick={() => {choose('lore')}}>Lore</button>
+      <br />
       <p>
         <button onClick={sexChange}>Swap</button> {cat.gender}
       </p>

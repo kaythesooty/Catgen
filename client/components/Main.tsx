@@ -13,6 +13,7 @@ import { White } from './pickers/White'
 import CatData from '../../models/Cat'
 import { TortieBase, TortieOptions, TortieSecond } from './pickers/Tortie'
 import { Tint } from './pickers/Tint'
+import { LorePicker } from './pickers/Lore'
 
 const outline = document.getElementById('outline') as HTMLImageElement
 const eyes = document.getElementById('eyes') as HTMLImageElement
@@ -119,6 +120,7 @@ export function Main() {
       {picker === 'torties' && <TortieOptions setter={updateWrapper} cat={cat} />}
       {picker === 'torties-base' && <TortieBase setter={updateWrapper} cat={cat} />}
       {picker === 'torties-second' && <TortieSecond setter={updateWrapper} cat={cat} />}
+      {picker === 'lore' && <LorePicker setter={updateWrapper} cat={cat} />}
     </main>
   )
 }
