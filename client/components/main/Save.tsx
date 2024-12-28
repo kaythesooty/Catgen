@@ -16,7 +16,7 @@ const defaultCat: CatData = {
   gender: 'female',
   gender_align: 'nonbinary',
   status: 'warrior',
-  backstory: 'clan_founder',
+  backstory: 'clanborn',
   moons: 37,
   trait: 'calm',
   paralyzed: false,
@@ -39,7 +39,8 @@ const defaultCat: CatData = {
   tortie_pattern: null,
   skin: 'DARKSALMON',
   tint: 'none',
-  skill: 'CAMP'
+  skill: 'CAMP',
+  secondSkill: null
 }
 
 function doTortie(cat: CatData) {
