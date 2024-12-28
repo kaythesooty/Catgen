@@ -154,6 +154,36 @@ export function saveImage(canvas: HTMLCanvasElement, cat: CatData) {
   })
 }
 
+function createSkillDict(cat: CatData) {
+  let pSkill = 0
+  let sSkill = 0
+  let isApp = "False"
+
+  const appExp = /apprentice/
+  if (cat.status == "kitten" || appExp.test(cat.status)) {
+    isApp = "True"
+  }
+
+  const k = 0.05
+  const max = 30
+  pSkill = Math.floor((1 - Math.exp(-k * cat.moons)) * max)
+
+  if (cat.secondSkill != null) {
+    sSkill = Math.floor((1 - Math.exp(-k * cat.moons)) * max / 3)
+  }
+
+  const primary = `${cat.skill},${pSkill},${isApp}`
+  const secondary = cat.secondSkill != null ? `${cat.secondSkill},${sSkill},${isApp}` : null
+
+  const skillDict = {
+    primary,
+    secondary,
+    hidden: null
+  }
+
+  return skillDict
+}
+
 function saveJson(cat: CatData) {
   const pronouns = [
     {
@@ -215,6 +245,7 @@ function saveJson(cat: CatData) {
     tortie_pattern: cat.tortie_pattern,
     skin: cat.skin,
     tint: cat.tint,
+    skill_dict: createSkillDict(cat)
   }
 
   const blob = new Blob([JSON.stringify(exportCat, null, 4)], { type: 'application/json' })
