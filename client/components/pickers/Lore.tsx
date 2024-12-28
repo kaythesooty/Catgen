@@ -14,12 +14,6 @@ export function LorePicker({ setter, cat }: Props) {
 
   return (
     <div className="picker">
-      <h3>BASIC INFO</h3>
-      <div className='flex-container'>
-        <p>Name: {cat.name_prefix}{cat.name_suffix}</p>
-        <p>Moons: {cat.moons}</p>
-      </div>
-      <div className="line"></div>
       <h3>BACKSTORY</h3>
       <select value={backstoryCategory} onChange={(e) => {setBackstoryCategory(e.target.value)}}>
         {Object.keys(backstory_categories).map((key, i) => <option key={i} value={key}>{key}</option>)}
