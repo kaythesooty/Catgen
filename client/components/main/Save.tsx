@@ -1,5 +1,5 @@
 import { randomBool, randomInt } from '../../store'
-import { peltPatterns, peltColours, skinColours, whitePatches, tortiePatterns, defaultExportCat, tintColours, traitsKitten, traits } from '../../../storage/dict'
+import { peltPatterns, peltColours, skinColours, whitePatches, tortiePatterns, defaultExportCat, tintColours, traitsKitten, traits, skills } from '../../../storage/dict'
 import { eyeColours } from '../pickers/Eyes'
 import CatData from '../../../models/Cat'
 import names from '../../../storage/names.ts'
@@ -38,7 +38,8 @@ const defaultCat: CatData = {
   tortie_color: null,
   tortie_pattern: null,
   skin: 'DARKSALMON',
-  tint: 'none'
+  tint: 'none',
+  skill: 'CAMP'
 }
 
 function doTortie(cat: CatData) {
@@ -72,6 +73,8 @@ export function randomiseCat(): CatData {
   cat.reverse = randomBool()
   cat.skin = skinColours[randomInt(0, skinColours.length - 1)]
   cat.white_patches = randomInt(1, 3) === 3 ? whitePatches[randomInt(1, whitePatches.length - 1)] : null
+  cat.skill = skills[randomInt(0, skills.length - 1)]
+  randomBool() ? cat.secondSkill = skills[randomInt(0, skills.length - 1)] : null
 
   if (randomInt(1, 4) === 4) {
     cat.tint = tintColours[randomInt(0, tintColours.length - 1)]
