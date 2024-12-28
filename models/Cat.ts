@@ -6,6 +6,7 @@ export default interface CatData {
   status: string
   backstory: string
   moons: number
+  trait: string
   paralyzed: boolean
   sick: boolean
   pelt_name: string

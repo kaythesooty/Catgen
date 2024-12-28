@@ -1,5 +1,5 @@
 import { randomBool, randomInt } from '../../store'
-import { peltPatterns, peltColours, skinColours, whitePatches, tortiePatterns, defaultExportCat, tintColours } from '../../../storage/dict'
+import { peltPatterns, peltColours, skinColours, whitePatches, tortiePatterns, defaultExportCat, tintColours, traitsKitten, traits } from '../../../storage/dict'
 import { eyeColours } from '../pickers/Eyes'
 import CatData from '../../../models/Cat'
 import names from '../../../storage/names.ts'
@@ -18,6 +18,7 @@ const defaultCat: CatData = {
   status: 'warrior',
   backstory: 'clan_founder',
   moons: 37,
+  trait: 'calm',
   paralyzed: false,
   sick: false,
   pelt_name: 'SingleColour',
@@ -89,6 +90,9 @@ export function randomiseCat(): CatData {
   else if (cat.moons < 12) cat.status = 'apprentice'
   else if (randomInt(1, 20) === 20) cat.status = 'leader'
   else cat.status = 'warrior'
+
+  if (cat.status == 'kitten') cat.trait = traitsKitten[randomInt(0, traitsKitten.length - 1)]
+  else cat.trait = traits[randomInt(0, traits.length - 1)]
 
   switch (randomInt(1, 4)) {
     case 1:
@@ -187,6 +191,7 @@ function saveJson(cat: CatData) {
     status: cat.status,
     backstory: cat.backstory,
     moons: cat.moons,
+    trait: cat.trait,
     paralyzed: cat.paralyzed,
     pelt_name: cat.pelt_name,
     pelt_color: cat.pelt_color,
