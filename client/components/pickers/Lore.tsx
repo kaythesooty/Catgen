@@ -27,7 +27,7 @@ export function LorePicker({ setter, cat }: Props) {
       {backstory_categories[backstoryCategory].map((story, i) => <button key={i} onClick={() => setter({...cat, backstory: story})}>{story}</button>)}
       <p>{backstories[cat.backstory]}</p>
       <div className="line"></div>
-      <h3>TRAITS AND PERSONALITY</h3>
+      <h3>TRAITS</h3>
     </div>
   )
 }
