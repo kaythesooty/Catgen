@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import CatData from '../../../models/Cat'
-import { backstory_categories, backstories, traits, traitsKitten } from '../../../storage/dict'
+import { backstory_categories, backstories, traits, traitsKitten, skills } from '../../../storage/dict'
 
 interface Props {
   setter: (newCat: CatData) => void
@@ -25,6 +25,13 @@ export function LorePicker({ setter, cat }: Props) {
       <p>{cat.trait}</p>
       {cat.status == "kitten" && traitsKitten.map((trt, i) => <button key={i} onClick={() => setter({...cat, trait: trt})}>{trt}</button>)}
       {cat.status != "kitten" && traits.map((trt, i) => <button key={i} onClick={() => setter({...cat, trait: trt})}>{trt}</button>)}
+      <div className="line"></div>
+      <h3>SKILLS</h3>
+      <p>{cat.skill}{cat.secondSkill != null && ` and ${cat.secondSkill}`}</p>
+      {skills.map((skl, i) => <button key={i} onClick={() => setter({...cat, skill: skl})}>{skl}</button>)}
+      <h4>SECONDARY</h4>
+      <button onClick={() => setter({...cat, secondSkill: null})}>NONE</button>
+      {skills.map((skl, i) => <button key={i} onClick={() => setter({...cat, secondSkill: skl})}>{skl}</button>)}
     </div>
   )
 }

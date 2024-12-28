@@ -167,6 +167,12 @@ export const backstory_categories = {
   ]
 }
 
+export const skills = [
+  "CAMP", "CLAIRVOYANT", "CLEVER", "CLIMBER", "DARK", "DREAM", "FIGHTER", "GHOST",
+  "HEALER", "HUNTER", "INSIGHTFUL", "KIT", "LORE", "MEDIATOR", "SENSE", "OMEN", 
+  "PROPHET", "RUNNER", "SPEAKER", "STAR", "STORY", "SWIMMER", "TEACHER"
+]
+
 export const defaultExportCat = {
   ID: '##',
   name_prefix: 'Wild',
@@ -189,7 +195,6 @@ export const defaultExportCat = {
   backstory: 'clan_founder',
   moons: 36,
   trait: 'charismatic',
-  facets: '8,9,8,4',
   parent1: null,
   parent2: null,
   adoptive_parents: [],
