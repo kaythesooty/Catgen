@@ -49,9 +49,7 @@ export function Canvas({ draw, catSetter, cat }: Props) {
           <option value={'apprentice'}>Apprentice</option>
           <option value={'mediator apprentice'}>Mediator Apprentice</option>
           <option value={'medicine cat apprentice'}>Medicine Cat Apprentice</option>
-          <option value={'warrior'} selected>
-            Warrior
-          </option>
+          <option value={'warrior'}>Warrior</option>
           <option value={'mediator'}>Mediator</option>
           <option value={'medicine cat'}>Medicine Cat</option>
           <option value={'deputy'}>Deputy</option>
