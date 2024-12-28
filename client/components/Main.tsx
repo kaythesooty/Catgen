@@ -2,10 +2,10 @@ import { useState } from 'react'
 import { Canvas } from './main/Canvas'
 import { LeftPanel, RightPanel } from './main/Panels'
 import { randomiseCat } from './main/Save'
-import { calculateCoords, getPose } from '../store'
+import { calculateCoords, getPose, randomInt } from '../store'
 import { PosePicker } from './pickers/Pose'
 import { Pickers } from './main/Pickers'
-import { peltColours, skinColours, tortiePatterns, whitePatches, tintColours } from '../../storage/dict'
+import { peltColours, skinColours, tortiePatterns, whitePatches, tintColours, traitsKitten, traits } from '../../storage/dict'
 import { eyeColours, Eyes } from './pickers/Eyes'
 import { Skin } from './pickers/Skin'
 import { Pelt } from './pickers/Pelt'
@@ -90,6 +90,11 @@ export function Main() {
     if (newCat.pelt_length !== 'long' && newCat.sprite_adult > 8) newCat.sprite_adult = newCat.sprite_adult - 3
     if (newCat.moons < 6) newCat.status = 'kitten'
     if (newCat.moons >= 6 && newCat.moons < 13 && cat.moons < 6) newCat.status = 'apprentice'
+    if (newCat.status == 'kitten' && !traitsKitten.find(trt => trt == newCat.trait)) {
+      newCat.trait = traitsKitten[randomInt(0, traitsKitten.length - 1)]
+    } else if (newCat.status != 'kitten' && !traits.find(trt => trt == newCat.trait)) {
+      newCat.trait = traits[randomInt(0, traits.length - 1)]
+    }
     setCat(newCat)
   }
 

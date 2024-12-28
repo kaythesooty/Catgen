@@ -56,3 +56,4 @@ export function randomInt(min: number, max: number): number {
 export function randomBool(): boolean {
   return Math.random() < 0.5 ? false : true
 }
+
