@@ -6,8 +6,10 @@ Currently in alpha, Catgen will help with generating and customising cats for Cl
 
 ## Changelog
 
-### Latest version
-* Changelog here
+### Version 0.2
+* Name and rank your cat
+* Customise cat's lore
+* Trans your cat's gender
 
 ### Version 0.1 (initial release)
 * Customise your cat
