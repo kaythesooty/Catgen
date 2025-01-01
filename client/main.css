@@ -29,6 +29,10 @@ p {
   margin-top: 5px;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .flex-container {
   display: flex;
   justify-content: space-evenly;
