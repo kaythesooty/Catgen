@@ -7,6 +7,10 @@ body {
   text-align: center;
 }
 
+button {
+  margin: 5px;
+}
+
 canvas {
   border: solid black 2px;
 }
