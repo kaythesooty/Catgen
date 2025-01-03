@@ -1,4 +1,4 @@
-import { randomBool, randomInt } from '../../store'
+import { randomBool, randomInt, doWhitePatches } from '../../store'
 import skills from '@dicts/skills.json'
 import defaultExportCat from '@dicts/export_cat.json'
 import eyeColours from '@dicts/eyeColours.json'
@@ -8,8 +8,7 @@ import skinColours from '@dicts/skinColours.json'
 import tintColours from '@dicts/tintColours.json'
 import tortiePatterns from '@dicts/tortiePatterns.json'
 import traits from '@dicts/traits.json'
-import whitePatches from '@dicts/whitePatches.json'
-import CatData from '../../../models/Cat'
+import CatData from '@models/Cat'
 
 interface Props {
   cat: (cat: CatData) => void
@@ -56,11 +55,6 @@ function doTortie(cat: CatData) {
   cat.tortie_base = pelts.patterns.code[randomInt(0, pelts.patterns.code.length - 1)].toLowerCase()
   cat.tortie_color = pelts.colours.code[randomInt(0, pelts.colours.code.length - 1)]
   cat.tortie_pattern = pelts.patterns.code[randomInt(0, pelts.patterns.code.length - 1)].toLowerCase()
-}
-
-function doWhitePatches(): string {
-  const patch = Object.keys(whitePatches)[randomInt(0, 3)]
-  return whitePatches[patch][randomInt(0, whitePatches[patch].length)]
 }
 
 export function randomiseCat(): CatData {

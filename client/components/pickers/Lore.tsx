@@ -1,6 +1,9 @@
 import { useState } from 'react'
-import CatData from '../../../models/Cat'
-import { backstory_categories, backstories, traits, traitsKitten, skills } from '../../../storage/dict'
+import CatData from '@models/Cat'
+
+import backstories from '@dicts/backstories.json'
+import traits from '@dicts/traits.json'
+import skills from '@dicts/skills.json'
 
 interface Props {
   setter: (newCat: CatData) => void
@@ -16,22 +19,22 @@ export function LorePicker({ setter, cat }: Props) {
     <div className="picker">
       <h3>BACKSTORY</h3>
       <select value={backstoryCategory} onChange={(e) => {setBackstoryCategory(e.target.value)}}>
-        {Object.keys(backstory_categories).map((key, i) => <option key={i} value={key}>{key}</option>)}
+        {Object.keys(backstories.categories).map((key, i) => <option key={i} value={key}>{backstories.display[key]}</option>)}
       </select>
-      {backstory_categories[backstoryCategory].map((story, i) => <button key={i} onClick={() => setter({...cat, backstory: story})}>{story}</button>)}
-      <p>{backstories[cat.backstory]}</p>
+      {backstories.categories[backstoryCategory].map((story, i) => <button key={i} onClick={() => setter({...cat, backstory: story})}>{story}</button>)}
+      <p>{backstories.backstories[cat.backstory]}</p>
       <div className="line"></div>
       <h3>TRAITS</h3>
       <p>{cat.trait}</p>
-      {cat.status == "kitten" && traitsKitten.map((trt, i) => <button key={i} onClick={() => setter({...cat, trait: trt})}>{trt}</button>)}
-      {cat.status != "kitten" && traits.map((trt, i) => <button key={i} onClick={() => setter({...cat, trait: trt})}>{trt}</button>)}
+      {cat.status == "kitten" && traits.kitten.map((trt, i) => <button key={i} onClick={() => setter({...cat, trait: trt})}>{trt}</button>)}
+      {cat.status != "kitten" && traits.normal.map((trt, i) => <button key={i} onClick={() => setter({...cat, trait: trt})}>{trt}</button>)}
       <div className="line"></div>
       <h3>SKILLS</h3>
       <p>{cat.skill}{cat.secondSkill != null && ` and ${cat.secondSkill}`}</p>
-      {skills.map((skl, i) => <button key={i} onClick={() => setter({...cat, skill: skl})}>{skl}</button>)}
+      {skills.code.map((skl, i) => <button key={i} onClick={() => setter({...cat, skill: skl})}>{skl}</button>)}
       <h4>SECONDARY</h4>
       <button onClick={() => setter({...cat, secondSkill: null})}>NONE</button>
-      {skills.map((skl, i) => <button key={i} onClick={() => setter({...cat, secondSkill: skl})}>{skl}</button>)}
+      {skills.code.map((skl, i) => <button key={i} onClick={() => setter({...cat, secondSkill: skl})}>{skl}</button>)}
     </div>
   )
 }

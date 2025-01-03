@@ -1,5 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
-import CatData from '../../../models/Cat'
+import CatData from '@models/Cat'
 
 interface Props {
   choose: (picker: string) => void

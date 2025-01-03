@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react'
 import { Save } from './Save'
-import CatData from '../../../models/Cat'
+import CatData from '@models/Cat'
 
 interface Props {
   draw: (context: CanvasRenderingContext2D) => void

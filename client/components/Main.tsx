@@ -5,15 +5,22 @@ import { randomiseCat } from './main/Save'
 import { calculateCoords, getPose, randomInt } from '../store'
 import { PosePicker } from './pickers/Pose'
 import { Pickers } from './main/Pickers'
-import { peltColours, skinColours, tortiePatterns, whitePatches, tintColours, traitsKitten, traits } from '../../storage/dict'
-import { eyeColours, Eyes } from './pickers/Eyes'
+import { Eyes } from './pickers/Eyes'
 import { Skin } from './pickers/Skin'
 import { Pelt } from './pickers/Pelt'
 import { White } from './pickers/White'
-import CatData from '../../models/Cat'
+import CatData from '@models/Cat'
 import { TortieBase, TortieOptions, TortieSecond } from './pickers/Tortie'
 import { Tint } from './pickers/Tint'
 import { LorePicker } from './pickers/Lore'
+
+import eyeColours from '@dicts/eyeColours.json'
+import pelts from '@dicts/pelts.json'
+import skinColours from '@dicts/skinColours.json'
+import tintColours from '@dicts/tintColours.json'
+import tortiePatterns from '@dicts/tortiePatterns.json'
+import traits from '@dicts/traits.json'
+import whitePatches from '@dicts/whitePatches.json'
 
 const outline = document.getElementById('outline') as HTMLImageElement
 const eyes = document.getElementById('eyes') as HTMLImageElement
@@ -31,14 +38,14 @@ export function Main() {
     const pose = getPose(cat)
     // Calculate spritesheet coords
     const outlinePos = calculateCoords(pose, 3, 7, 50)
-    let colourPos = calculateCoords(peltColours.indexOf(cat.pelt_color), 7, 3, 150, 350)
-    let eyePos = calculateCoords(eyeColours.indexOf(cat.eye_colour), 12, 2, 150, 350)
-    let skinPos = calculateCoords(skinColours.indexOf(cat.skin), 6, 3, 150, 350)
-    let eyePos2 = calculateCoords(eyeColours.indexOf(cat.eye_colour2), 12, 2, 150, 350)
-    let whitePos = calculateCoords(whitePatches.indexOf(cat.white_patches), 14, 10, 150, 350)
-    let tortiePos = calculateCoords(tortiePatterns.indexOf(cat.pattern), 10, 5, 150, 350)
-    let tortieColourPos = calculateCoords(peltColours.indexOf(cat.tortie_color), 7, 3, 150, 350)
-    let tintPos = calculateCoords(tintColours.indexOf(cat.tint), 4, 2, 150, 350)
+    let colourPos = calculateCoords(pelts.colours.code.indexOf(cat.pelt_color), 7, 3, 150, 350)
+    let eyePos = calculateCoords(eyeColours.code.indexOf(cat.eye_colour), 12, 2, 150, 350)
+    let skinPos = calculateCoords(skinColours.code.indexOf(cat.skin), 6, 3, 150, 350)
+    let eyePos2 = calculateCoords(eyeColours.code.indexOf(cat.eye_colour2), 12, 2, 150, 350)
+    let whitePos = calculateCoords(whitePatches.masterList.indexOf(cat.white_patches), 14, 10, 150, 350)
+    let tortiePos = calculateCoords(tortiePatterns.masterlist.indexOf(cat.pattern), 10, 5, 150, 350)
+    let tortieColourPos = calculateCoords(pelts.colours.code.indexOf(cat.tortie_color), 7, 3, 150, 350)
+    let tintPos = calculateCoords(tintColours.code.indexOf(cat.tint), 4, 2, 150, 350)
 
     // Calculate sprites based on pose
     colourPos = colourPos.map((clr, idx) => clr + outlinePos[idx])
@@ -90,10 +97,10 @@ export function Main() {
     if (newCat.pelt_length !== 'long' && newCat.sprite_adult > 8) newCat.sprite_adult = newCat.sprite_adult - 3
     if (newCat.moons < 6) newCat.status = 'kitten'
     if (newCat.moons >= 6 && newCat.moons < 13 && cat.moons < 6) newCat.status = 'apprentice'
-    if (newCat.status == 'kitten' && !traitsKitten.find(trt => trt == newCat.trait)) {
-      newCat.trait = traitsKitten[randomInt(0, traitsKitten.length - 1)]
-    } else if (newCat.status != 'kitten' && !traits.find(trt => trt == newCat.trait)) {
-      newCat.trait = traits[randomInt(0, traits.length - 1)]
+    if (newCat.status == 'kitten' && !traits.kitten.find(trt => trt == newCat.trait)) {
+      newCat.trait = traits.kitten[randomInt(0, traits.kitten.length - 1)]
+    } else if (newCat.status != 'kitten' && !traits.normal.find(trt => trt == newCat.trait)) {
+      newCat.trait = traits.normal[randomInt(0, traits.normal.length - 1)]
     }
     setCat(newCat)
   }

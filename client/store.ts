@@ -1,4 +1,5 @@
 import CatData from '../models/Cat'
+import whitePatches from '@dicts/whitePatches.json'
 
 export function calculateCoords(index: number, maxX: number, maxY: number, width: number, height?: number): number[] {
   const posArray = [0, 0]
@@ -57,3 +58,7 @@ export function randomBool(): boolean {
   return Math.random() < 0.5 ? false : true
 }
 
+export function doWhitePatches(): string {
+  const patch = Object.keys(whitePatches)[randomInt(0, 3)]
+  return whitePatches[patch][randomInt(0, whitePatches[patch].length)]
+}
