@@ -1,0 +1,12 @@
+{
+  "code": [
+    "BLACK", "RED", "PINK", "DARKBROWN", "BROWN", "LIGHTBROWN", "DARK", "DARKGREY",
+    "GREY", "DARKSALMON", "SALMON", "PEACH", "DARKMARBLED", "MARBLED", "LIGHTMARBLED",
+    "DARKBLUE", "BLUE", "LIGHTBLUE"
+  ],
+  "eng": [
+    "Black", "Red", "Pink", "Dark Brown", "Brown", "Light Brown", "Dark", "Dark Grey",
+    "Grey", "Dark Salmon", "Salmon", "Peach", "Dark Marbled", "Marbled", "Light Marbled",
+    "Dark Blue", "Blue", "Light Blue"
+  ]
+}
