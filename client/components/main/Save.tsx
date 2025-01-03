@@ -1,8 +1,14 @@
-import { randomBool, randomInt } from '../../store'
-import { peltPatterns, peltColours, skinColours, whitePatches, tortiePatterns, defaultExportCat, tintColours, traitsKitten, traits, skills } from '../../../storage/dict'
-import { eyeColours } from '../pickers/Eyes'
-import CatData from '../../../models/Cat'
-import names from '../../../storage/names.ts'
+import { randomBool, randomInt, doWhitePatches } from '../../store'
+import skills from '@dicts/skills.json'
+import defaultExportCat from '@dicts/export_cat.json'
+import eyeColours from '@dicts/eyeColours.json'
+import names from '@dicts/names.json'
+import pelts from '@dicts/pelts.json'
+import skinColours from '@dicts/skinColours.json'
+import tintColours from '@dicts/tintColours.json'
+import tortiePatterns from '@dicts/tortiePatterns.json'
+import traits from '@dicts/traits.json'
+import CatData from '@models/Cat'
 
 interface Props {
   cat: (cat: CatData) => void
@@ -45,10 +51,10 @@ const defaultCat: CatData = {
 
 function doTortie(cat: CatData) {
   cat.white_patches != null ? (cat.pelt_name = 'Calico') : (cat.pelt_name = 'Tortie')
-  cat.pattern = tortiePatterns[randomInt(0, tortiePatterns.length - 1)]
-  cat.tortie_base = peltPatterns[randomInt(0, peltPatterns.length - 1)].toLowerCase()
-  cat.tortie_color = peltColours[randomInt(0, peltColours.length - 1)]
-  cat.tortie_pattern = peltPatterns[randomInt(0, peltPatterns.length - 1)].toLowerCase()
+  cat.pattern = tortiePatterns.code[randomInt(0, tortiePatterns.code.length - 1)]
+  cat.tortie_base = pelts.patterns.code[randomInt(0, pelts.patterns.code.length - 1)].toLowerCase()
+  cat.tortie_color = pelts.colours.code[randomInt(0, pelts.colours.code.length - 1)]
+  cat.tortie_pattern = pelts.patterns.code[randomInt(0, pelts.patterns.code.length - 1)].toLowerCase()
 }
 
 export function randomiseCat(): CatData {
@@ -57,8 +63,8 @@ export function randomiseCat(): CatData {
   cat.gender_align = cat.gender
   cat.status = 'warrior'
   cat.moons = randomInt(0, 180)
-  cat.pelt_name = peltPatterns[randomInt(0, peltPatterns.length - 1)]
-  cat.pelt_color = peltColours[randomInt(0, peltColours.length - 1)]
+  cat.pelt_name = pelts.patterns.code[randomInt(0, pelts.patterns.code.length - 1)]
+  cat.pelt_color = pelts.colours.code[randomInt(0, pelts.colours.code.length - 1)]
 
   if (randomInt(1, 3) == 3) {
     cat.pelt_length = 'long'
@@ -70,15 +76,15 @@ export function randomiseCat(): CatData {
   cat.sprite_adolescent = randomInt(3, 5)
   cat.sprite_adult = randomInt(6, 8)
   cat.sprite_senior = randomInt(12, 14)
-  cat.eye_colour = eyeColours[randomInt(0, eyeColours.length - 1)]
+  cat.eye_colour = eyeColours.code[randomInt(0, eyeColours.code.length - 1)]
   cat.reverse = randomBool()
-  cat.skin = skinColours[randomInt(0, skinColours.length - 1)]
-  cat.white_patches = randomInt(1, 3) === 3 ? whitePatches[randomInt(1, whitePatches.length - 1)] : null
-  cat.skill = skills[randomInt(0, skills.length - 1)]
-  randomBool() ? cat.secondSkill = skills[randomInt(0, skills.length - 1)] : null
+  cat.skin = skinColours.code[randomInt(0, skinColours.code.length - 1)]
+  cat.white_patches = randomInt(1, 3) === 3 ? doWhitePatches() : null
+  cat.skill = skills.code[randomInt(0, skills.code.length - 1)]
+  randomBool() ? cat.secondSkill = skills.code[randomInt(0, skills.code.length - 1)] : null
 
   if (randomInt(1, 4) === 4) {
-    cat.tint = tintColours[randomInt(0, tintColours.length - 1)]
+    cat.tint = tintColours.code[randomInt(0, tintColours.code.length - 1)]
   } else cat.tint = null
 
   if (randomInt(1, 4) === 4 && cat.gender === 'female') doTortie(cat)
@@ -95,8 +101,8 @@ export function randomiseCat(): CatData {
   else if (randomInt(1, 20) === 20) cat.status = 'leader'
   else cat.status = 'warrior'
 
-  if (cat.status == 'kitten') cat.trait = traitsKitten[randomInt(0, traitsKitten.length - 1)]
-  else cat.trait = traits[randomInt(0, traits.length - 1)]
+  if (cat.status == 'kitten') cat.trait = traits.kitten[randomInt(0, traits.kitten.length - 1)]
+  else cat.trait = traits.normal[randomInt(0, traits.normal.length - 1)]
 
   switch (randomInt(1, 4)) {
     case 1:

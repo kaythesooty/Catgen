@@ -1,0 +1,26 @@
+{
+  "masterlist": [
+    "ONE", "TWO", "THREE", "FOUR", "REDTAIL", "DELILAH", "HALF", "STREAK", "MASK",
+    "SMOKE", "MINIMALONE", "MINIMALTWO", "MINIMALTHREE", "MINIMALFOUR", "OREO",
+    "SWOOP", "CHIMERA", "CHEST", "ARMTAIL", "GRUMPYFACE", "MOTTLED", "SIDEMASK",
+    "EYEDOT", "BANDANA", "PACMAN", "STREAMSTRIKE", "SMUDGED", "DAUB", "EMBER",
+    "BRIE", "ORIOLE", "ROBIN", "BRINDLE", "PAIGE", "ROSETAIL", "SAFI", "DAPPLENIGHT",
+    "BLANKET", "BELOVED", "BODY", "SHILOH", "FRECKLED", "HEARTBEAT"
+  ],
+  "code": [
+    "ONE", "TWO", "THREE", "FOUR", "ARMTAIL", "BANDANA", "BELOVED", "BLANKET", "BODY",
+    "BRIE", "BRINDLE", "CHEST", "CHIMERA", "DAPPLENIGHT", "DAUB", "DELILAH", "EMBER",
+    "EYEDOT", "FRECKLED", "GRUMPYFACE", "HALF", "HEARTBEAT", "MASK", "MINIMALONE",
+    "MINIMALTWO", "MINIMALTHREE", "MINIMALFOUR", "MOTTLED", "OREO", "ORIOLE", "PACMAN",
+    "PAIGE", "REDTAIL", "ROBIN", "ROSETAIL", "SAFI", "SHILOH", "SIDEMASK", "SMOKE",
+    "SMUDGED", "STREAK", "STREAMSTRIKE", "SWOOP"
+  ],
+  "eng": [
+    "One", "Two", "Three", "Four", "Arm and Tail", "Bandana", "Beloved", "Blanket", "Body",
+    "Brie", "Brindle", "Chest", "Chimera", "Dapplenight", "Daub", "Delilah", "Ember",
+    "Eye Dot", "Freckled", "Grumpy Face", "Half", "Heartbeat", "Mask", "Minimal 1",
+    "Minimal 2", "Minimal 3", "Minimal 4", "Mottled", "Oreo", "Oriole", "Pacman",
+    "Paige", "Redtail", "Robin", "Rosetail", "Safi", "Shiloh", "Sidemask", "Smoke",
+    "Smudged", "Streak", "Stream Strike", "Swoop"
+  ]
+}

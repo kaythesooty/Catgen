@@ -1,0 +1,96 @@
+{
+  "masterList": [
+    "FULLWHITE", "ANY", "TUXEDO", "LITTLE", "COLOURPOINT", "VAN", "ANYTWO", "MOON",
+    "PHANTOM", "POWDER", "BLEACHED", "SAVANNAH", "FADESPOTS", "PEBBLESHINE", "EXTRA",
+    "ONEEAR", "BROKEN", "LIGHTTUXEDO", "BUZZARDFANG", "RAGDOLL", "LIGHTSONG", "VITILIGO",
+    "BLACKSTAR", "PIEBALD", "CURVED", "PETAL", "SHIBAINU", "OWL", "TIP", "FANCY",
+    "FRECKLES", "RINGTAIL", "HALFFACE", "PANTSTWO", "GOATEE", "VITILIGOTWO", "PAWS",
+    "MITAINE", "BROKENBLAZE", "SCOURGE", "DIVA", "BEARD", "TAIL", "BLAZE", "PRINCE",
+    "BIB", "VEE", "UNDERS", "HONEY", "FAROFA", "DAMIEN", "MISTER", "BELLY", "TAILTIP",
+    "TOES", "TOPCOVER", "APRON", "CAPSADDLE", "MASKMANTLE", "SQUEAKS", "STAR",
+    "TOESTAIL", "RAVENPAW", "PANTS", "REVERSEPANTS", "SKUNK", "KARPATI", "HALFWHITE",
+    "APPALOOSA", "DAPPLEPAW", "HEART", "LILTWO", "GLASS", "MOORISH", "SEPIAPOINT",
+    "MINKPOINT", "SEALPOINT", "MAO", "LUNA", "CHESTSPECK", "WINGS", "PAINTED", "HEARTTWO",
+    "WOODPECKER", "BOOTS", "MISS", "COW", "COWTWO", "BUB", "BOWTIE", "MUSTACHE",
+    "REVERSEHEART", "SPARROW", "VEST", "LOVEBUG", "TRIXIE", "SAMMY", "SPARKLE",
+    "RIGHTEAR", "LEFTEAR", "ESTRELLA", "SHOOTINGSTAR", "EYESPOT", "REVERSEEYE",
+    "FADEBELLY", "FRONT", "BLOSSOMSTEP", "PEBBLE", "TAILTWO", "BUDDY", "BACKSPOT",
+    "EYEBAGS", "BULLSEYE", "FINN", "DIGIT", "KROPKA", "FCTWO", "FCONE", "MIA", "SCAR",
+    "BUSTER", "SMOKEY", "HAWKBLAZE", "CAKE", "ROSINA", "PRINCESS", "LOCKET", "BLAZEMASK",
+    "TEARS", "DOUGIE"
+  ],
+
+  "lowWhite": {
+    "code": [
+      "BACKSPOT", "BELLY", "BIB", "BLAZE", "BLAZEMASK", "BROKENBLAZE",
+      "BUZZARDFANG", "ESTRELLA", "EXTRA", "EYEBAGS", "HONEY", "LEFTEAR", "RIGHTEAR", "LIGHTTUXEDO",
+      "LITTLE", "LILTWO", "LOCKET", "LUNA", "MUSTACHE", "PAWS", "RAVENPAW", "REVERSEEYE",
+      "REVERSEHEART", "SCOURGE", "SPARKLE", "TAILTIP", "TEARS", "TIP",
+      "TOES", "TOESTAIL", "VEE"
+    ],
+    "eng": [
+      "Back Spot", "Belly", "Bib", "Blaze", "Blaze Mask", "Broken Blaze",
+      "Buzzardfang", "Estrella", "Extra", "Eyebags", "Honey", "Left Ear", "Right Ear", "Tuxedo Light",
+      "Little", "Little 2", "Locket", "Luna", "Mustache", "Paws", "Ravenpaw", "Reverse Eyespot",
+      "Reverse Heart", "Scourge", "Sparkle", "Tail-tip", "Tears", "Tip",
+      "Toes", "Toes and Tail", "Vee"
+    ]
+  },
+
+  "midWhite": {
+    "code": [
+      "BEARD", "FADEBELLY", "BOWTIE", "DAMIEN", "DAPPLEPAW", "DIGIT", "DIVA", "DOUGIE",
+      "FANCY", "FCONE", "FCTWO", "MIA", "MISS", "MITAINE", "PRINCESS",
+      "ROSINA", "SAVANNAH", "SKUNK", "FADESPOTS", "SQUEAKS", "STAR", "TOPCOVER", "TUXEDO",
+      "UNDERS", "VEST", "WINGS", "WOODPECKER"
+    ],
+    "eng": [
+      "Beard", "Belly Fade", "Bow-tie", "Damien", "Dapplepaw", "Digit", "Diva", "Dougie",
+      "Fancy", "FC 1", "FC 2", "Mia", "Miss", "Mitaine", "Princess",
+      "Rosina", "Savannah", "Skunk", "Spot Fade", "Squeaks", "Star", "Top-cover", "Tuxedo",
+      "Unders", "Vest", "Wings", "Woodpecker"
+    ]
+  },
+
+  "highWhite": {
+    "code": [
+      "ANY", "ANYTWO", "APPALOOSA", "BLOSSOMSTEP", "BROKEN", "BUB", "BULLSEYE",
+      "BUSTER", "CAKE", "CURVED", "FAROFA", "FINN", "FRECKLES", "FRONT", "GLASS",
+      "GOATEE", "HALFFACE", "HALFWHITE", "HAWKBLAZE", "MAO", "MASKMANTLE", "MISTER",
+      "OWL", "PAINTED", "PANTS", "PANTSTWO", "REVERSEPANTS", "PIEBALD", "PRINCE",
+      "RINGTAIL", "SAMMY", "SCAR", "SHIBAINU", "SPARROW", "TRIXIE"
+    ],
+    "eng": [
+      "Any", "Any 2", "Appaloosa", "Blossomstep", "Broken", "Bub", "Bullseye",
+      "Buster", "Cake", "Curved", "Farofa", "Finn", "Freckles", "Front", "Glass",
+      "Goatee", "Half-face", "Half White", "Hawk Blaze", "Mao", "Mask Mantle", "Mister",
+      "Owl", "Painted", "Pants", "Pants 2", "Reverse Pants", "Piebald", "Prince",
+      "Ringtail", "Sammy", "Scar", "Shiba Inu", "Sparrow", "Trixie"
+    ]
+  },
+
+  "mostlyWhite": {
+    "code": [
+      "APRON", "BLACKSTAR", "BOOTS", "BUDDY", "CAPSADDLE", "CHESTSPECK", "COW",
+      "COWTWO", "EYESPOT", "HEART", "HEARTTWO", "KROPKA", "LIGHTSONG", "LOVEBUG",
+      "MOORISH", "ONEEAR", "PEBBLE", "PEBBLESHINE", "PETAL", "SHOOTINGSTAR", "TAIL",
+      "TAILTWO", "VAN", "FULLWHITE"
+    ],
+    "eng": [
+      "Apron", "Blackstar", "Boots", "Buddy", "Cap-saddle", "Chest Speck", "Cow",
+      "Cow 2", "Eye Spot", "Heart", "Heart 2", "Kropka", "Lightsong", "Love Bug",
+      "Moorish", "One-ear", "Pebble", "Pebbleshine", "Petal", "Shooting Star", "Tail",
+      "Tail 2", "Van", "Full White"
+    ]
+  },
+
+  "vitiligo": {
+    "code": ["BLEACHED", "KARPATI", "MOON", "PHANTOM", "POWDER", "SMOKEY", "VITILIGO", "VITILIGOTWO"],
+    "eng": ["Bleached", "Karpati", "Moon", "Phantom", "Powder", "Smokey", "Vitiligo", "Vitiligo 2"]
+  },
+
+  "points": {
+    "code": ["COLOURPOINT", "MINKPOINT", "SEALPOINT", "SEPIAPOINT", "RAGDOLL"],
+    "eng": ["Colour Point", "Mink Point", "Seal Point", "Sepia Point", "Ragdoll"]
+  }
+}

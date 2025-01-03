@@ -1,5 +1,5 @@
-import { skinColours } from '../../../storage/dict'
-import CatData from '../../../models/Cat'
+import skinColours from '@dicts/skinColours.json'
+import CatData from '@models/Cat'
 
 interface Props {
   setter: (newCat: CatData) => void
@@ -9,9 +9,9 @@ interface Props {
 export function Skin({ setter, cat }: Props) {
   return (
     <div className="picker">
-      {skinColours.map((clr, i) => (
+      {skinColours.code.map((clr, i) => (
         <button key={i} onClick={() => setter({ ...cat, skin: clr })}>
-          {clr}
+          {skinColours.eng[i]}
         </button>
       ))}
     </div>

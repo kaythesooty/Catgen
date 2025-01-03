@@ -7,7 +7,7 @@ function Footer() {
       <ul>
         Changelog 
         <li><strong>Version 0.2:</strong></li>
-        <li>Edit cat's name and gender</li>
+        <li>Edit cat&apos;s name and gender</li>
         <li>Backstories, skills, and traits added</li>
         <li><strong>Version 0.1:</strong></li>
         <li>Initial Release</li>

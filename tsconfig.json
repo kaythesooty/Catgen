@@ -13,5 +13,11 @@
     "allowImportingTsExtensions": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
+    "baseUrl": "./",
+    "paths": {
+      "@dicts/*": ["client/dicts/*"],
+      "@models/*": ["models/*"],
+      "@pickers/*": ["client/components/pickers/*"],
+    }
   }
 }

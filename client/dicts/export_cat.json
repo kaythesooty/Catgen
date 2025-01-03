@@ -1,27 +1,34 @@
 {
-  "ID": "53",
+  "ID": "",
   "name_prefix": "Dream",
   "name_suffix": "heart",
   "specsuffix_hidden": false,
   "gender": "female",
-  "gender_align": "female",
+  "gender_align": "nonbinary",
+  "pronouns": [
+    {
+      "subject": "they",
+      "object": "them",
+      "poss": "thier",
+      "inposs": "theirs",
+      "self": "themselves",
+      "conju": 1
+    }
+  ],
   "birth_cooldown": 0,
   "status": "warrior",
   "backstory": "clan_founder",
   "moons": 17,
   "trait": "charismatic",
-  "facets": "8,9,8,4",
   "parent1": null,
   "parent2": null,
   "adoptive_parents": [],
   "mentor": null,
-  "former_mentor": [
-      "60"
-  ],
+  "former_mentor": [],
   "patrol_with_mentor": 0,
   "mate": [],
   "previous_mates": [],
-  "dead": true,
+  "dead": false,
   "paralyzed": false,
   "no_kits": false,
   "no_retire": false,
@@ -56,13 +63,13 @@
   "scars": [],
   "accessory": null,
   "experience": 67,
-  "dead_moons": 35,
+  "dead_moons": 0,
   "current_apprentice": [],
   "former_apprentices": [],
   "df": false,
   "outside": false,
   "faded_offspring": [],
-  "opacity": 99,
+  "opacity": 100,
   "prevent_fading": false,
   "favourite": false
 }

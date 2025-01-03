@@ -1,5 +1,5 @@
-const names = {
-  normalSuffixes: [
+{
+  "normalSuffixes": [
     "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur",
     "tuft", "tuft", "tuft", "tuft", "tuft", "tooth", "tooth", "tooth", "tooth", "tooth",
     "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", 
@@ -30,7 +30,7 @@ const names = {
     "trot", "tumble", "twist", "valley", "watcher", "water", "wave", "web", "whisper", "whistle", "willow", "wind", "wing", "wish", "wisp", 
     "zoom"
   ],
-  peltSuffixes: {
+  "peltSuffixes": {
     "TwoColour": ["patch", "spot", "splash", "patch", "spots", "swan"],
     "Tabby": ["stripe", "feather", "leaf", "stripe", "shade"],
     "Marbled": ["stripe", "feather", "leaf", "stripe", "shade"],
@@ -48,7 +48,7 @@ const names = {
     "Tortie": ["dapple", "speckle", "spot", "dapple"],
     "Calico": ["stripe", "dapple", "patch", "patch"]
   },
-  tortiePeltSuffixes: {
+  "tortiePeltSuffixes": {
     "single": ["dapple", "speckle", "spots", "splash"],
     "tabby": ["stripe", "feather", "leaf", "stripe", "shade", "fern"],
     "marbled": ["stripe", "feather", "leaf", "stripe", "shade", "fern"],
@@ -65,7 +65,7 @@ const names = {
     "masked": ["stripe", "dapple", "mask", "mask", "shade"]
   },
 
-  normalPrefixes: [
+  "normalPrefixes": [
     "Adder", "Alder", "Ant", "Antler", "Aphid", "Apple", "Apricot", "Arch", "Aspen", "Aster", 
     "Badger", "Barley", "Basil", "Bass", "Bay", "Beam", "Bear", "Beaver", "Bee", "Beech", "Beetle", "Berry", "Big", "Billow", "Birch", 
     "Bird", "Bite", "Bitter", "Bittern", "Bliss", "Blizzard", "Bloom", "Blossom", "Blotch", "Bluebell", "Bluff", "Bog", "Borage", 
@@ -105,7 +105,18 @@ const names = {
     "Zinnia"
   ],
 
-  colourPrefixes: {
+  "clanPrefixes": [
+    "Air", "Ashen", "Bat", "Bleak", "Bone", "Branch", "Burn", "Burnet", "Buttercup", "Canary", "Cinder", "Cloud",
+    "Cloudy", "Cotton", "Crocus", "Crow", "Dandelion", "Day", "Doe", "Dove", "Egg", "Ember", "Fig", "Fire", "Flame",
+    "Flare", "Flurry", "Freeze", "Frost", "Frozen", "Ghost", "Glint", "Gossamer", "Grackle", "Hawthorn", "Heather",
+    "Hickory", "Hollyhock", "Ibis", "Ice", "Icicle", "Icy", "Jasmine", "Larkspur", "Log", "Lyre", "Magpie", "Midnight",
+    "Mist", "Morel", "Mulberry", "Night", "Oleander", "Orchid", "Otter", "Owl", "Pebble", "Phlox", "Pipit", "Plume",
+    "Privet", "Rime", "Rock", "Rue", "Saffron", "Scale", "Scrub", "Shade", "Shadow", "Shatter", "Smoke", "Snapdragon",
+    "Snow", "Snowy", "Soot", "Spindle", "Stag", "Stone", "Storm", "Sun", "Swan", "Teasel", "Tree", "Twig", "Twilight",
+    "Verbena", "Vervain", "Violet", "Vole", "Warbler", "Wisp"
+  ],
+
+  "colourPrefixes": {
     "WHITE": [
     "White", "White", "Pale", "Snow", "Cloud", "Cloudy", "Milk", "Hail", "Frost", "Frozen", "Freeze", "Ice", "Icy", "Icicle",
     "Blizzard", "Flurry", "Moon", "Light", "Bone", "Bright", "Swan", "Dove", "Cotton", "Hawthorn", "Laurel", "Wisp",
@@ -196,7 +207,7 @@ const names = {
     ]
   },
 
-  biomePrefixes: {
+  "biomePrefixes": {
     "Forest": [
     "Acorn","Almond", "Antler", "Aspen", "Badger", "Bark", "Bat", "Beech", "Birch", "Boar", "Branch", "Branch", "Buck", "Canopy",
     "Cedar", "Civet", "Deer", "Doe", "Elk", "Fern", "Fern", "Fir", "Forest", "Frond", "Grouse", "Grove", "Honey", "Log", "Lynx", "Magnolia",
@@ -241,7 +252,7 @@ const names = {
     ]
   },
 
-  biomeSuffixes: {
+  "biomeSuffixes": {
     "Forest": [
     "acorn", "antler", "beak", "branch", "clove", "cone", "dapple", "deer", "fawn", "fern", "fog", "frond", "grove", "moss", 
     "sap", "shade", "twig", "wood", "thicket", "glade", "bear"
@@ -270,7 +281,7 @@ const names = {
     ]
   },
 
-  eyePrefixes: {
+  "eyePrefixes": {
     "YELLOW": ["Yellow", "Moon", "Daisy", "Honey", "Light", "Sun", "Lemon"],
     "AMBER": ["Amber", "Sun", "Fire", "Gold", "Honey", "Scorch", "Flame", "Blaze", "Pumpkin"],
     "HAZEL": ["Hazel", "Tawny", "Hazel", "Gold", "Daisy", "Sand", "Almond"],
@@ -294,7 +305,7 @@ const names = {
     "SILVER": ["Gray", "Stone", "Silver", "Silver", "Moon", "Rain", "Storm", "Pale", "Light"]
   },
 
-  lonerNames: [
+  "lonerNames": [
     "Abigail", "Abuko", "Abyss", "Abby", "Acacia", "Ace", "Adaliz", "Adam", "Admiral", "Adora", "Aether", "Agatha", "Agent Smith", "Agnes", "Ah ha", "Ah", "Aidan", "Aiden",
     "Akila", "Akilah", "Alaska", "Alastair", "Alba", "Albedo", "Alcina", "Alcor", "Alcyone", "Aldrich", "Alec", "Alex", "Alexa", "Alfie", "Alfredo", "Algernon", "Alice", 
     "Alien", "Alma", "Alonzo", "Alphonse", "Alphys", "Altair", "Amanda", "Amani", "Amaretto", "Amari", "Amaya", "Amber", "Amelia", "Amethyst", "Amigo", "Amir", "Amity", 
@@ -405,12 +416,12 @@ const names = {
     "Zach", "Zachary", "Zahra", "Zambezi", "Zambia", "Zaniah", "Zari", "Zariah", "Zazu", "Zebra", "Zekrom", "Zelda", "Zell", 
     "Zendaya", "Zenith", "Zeraora", "Zikomo", "Zim", "Zion", "Zira", "Ziti", "Zoe", "Zoomie", "Zorro", "Zorua", "Zuberi", "Zuko", "Zuma", "Zuna", "Zuva"
     ],
-	animalSuffixes: [
+	"animalSuffixes": [
 		"badger", "bat", "bear", "bee", "beetle", "bird", "bug", "cricket", "deer", "eagle", "elk", "falcon", "fawn", "fish", "fox", "goose", "hare", "hawk", "horse", 
     "jay", "kestrel", "kite", "lamb", "leopard", "lion", "minnow", "moth", "mouse", "newt", "ram", "raven", "roach", "scorpion", "sheep", "snake", "spider", 
     "squid", "swan", "thrush", "tiger", "turtle"
 	],
-	animalPrefixes: [
+	"animalPrefixes": [
 		"Addax", "Adder", "Albatross", "Alligator", "Alpaca", "Ant", "Antelope", "Aphid", "Avocet", "Axolotl", "Badger", "Barracuda", "Bass", "Bat", "Bear", "Beaver", 
     "Bee", "Beetle", "Beluga", "Bird", "Bison", "Bittern", "Boar", "Buck", "Buffalo", "Bug", "Butterfly", "Camel", "Canary", "Caracal", "Caribou", "Carp", 
     "Caterpillar", "Chaffinch", "Chamois", "Cheetah", "Chick", "Cicada", "Civet", "Clam", "Coati", "Cobra", "Cod", "Condor", "Coral", "Cormorant", "Cougar", "Cow", 
@@ -425,9 +436,7 @@ const names = {
     "Tarantula", "Tiger", "Toad", "Trout", "Turtle", "Viper", "Vixen", "Vole", "Vulture", "Warbler", "Wasp", "Weasel", "Weevil", "Whale", "Wolf", "Wolverine", "Worm", 
     "Wren"
 	],
-	inappropriateNames: [
+	"inappropriateNames": [
 		"wetback", "yellowface", "redface", "blackface", "brownface", "pancakeface", "yellowbone", "molesting"
 	]
 }
-
-export default names

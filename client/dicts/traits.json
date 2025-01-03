@@ -1,0 +1,14 @@
+{
+  "normal": [
+    "troublesome", "lonesome", "fierce", "bloodthirsty", "cold", "childish", "playful",
+    "charismatic", "bold", "daring", "nervous", "righteous", "insecure", "strict",
+    "compassionate", "thoughtful", "ambitious", "confident", "adventurous", "calm",
+    "gloomy", "faithful", "loving", "loyal", "responsible", "shameless", "sneaky",
+    "strange", "vengeful", "wise", "arrogant", "competitive", "grumpy", "cunning",
+    "oblivious", "flamboyant", "rebellious", "sincere", "careful"
+  ],
+  "kitten": [
+    "unruly", "shy", "impulsive", "bullying", "attention-seeker", "charming", "self-conscious",
+    "noisy", "skittish", "daydreamer", "fearless", "sweet", "know-it-all", "polite", "bossy"
+  ]
+}

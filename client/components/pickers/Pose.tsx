@@ -1,4 +1,4 @@
-import CatData from '../../../models/Cat'
+import CatData from '@models/Cat'
 
 interface Props {
   setter: (newCat: CatData) => void
