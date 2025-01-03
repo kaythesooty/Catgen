@@ -23,6 +23,15 @@ const white = document.getElementById('white-patches') as HTMLImageElement
 const tortie = document.getElementById('tortie-masks') as HTMLImageElement
 const tints = document.getElementById('tints') as HTMLImageElement
 
+const accessory = {
+  collars: document.getElementById('collars') as HTMLImageElement,
+  bellcollars: document.getElementById('bellcollars') as HTMLImageElement,
+  bowcollars: document.getElementById('bowcollars') as HTMLImageElement,
+  nyloncollars: document.getElementById('nyloncollars') as HTMLImageElement,
+  herbs: document.getElementById('medcatherbs') as HTMLImageElement,
+  wild: document.getElementById('wild') as HTMLImageElement
+}
+
 export function Main() {
   const [cat, setCat] = useState(randomiseCat)
   const [picker, setPicker] = useState('default')
