@@ -1,0 +1,12 @@
+{
+  "code": [
+    "YELLOW", "AMBER", "HAZEL", "PALEGREEN", "GREEN", "BLUE", "DARKBLUE", "GREY",
+    "CYAN", "EMERALD", "HEATHERBLUE", "SUNLITICE", "COPPER", "SAGE", "COBALT",
+    "PALEYELLOW", "BRONZE", "SILVER", "PALEYELLOW", "GOLD", "GREENYELLOW"
+  ],
+  "eng": [
+    "Yellow", "Amber", "Hazel", "Pale Green", "Green", "Blue", "Dark Blue", "Grey",
+    "Cyan", "Emerald", "Heather Blue", "Sunlit Ice", "Copper", "Sage", "Cobalt",
+    "Pale Blue", "Bronze", "Silver", "Pale Yellow", "Gold", "Green-Yellow"
+  ]
+}
