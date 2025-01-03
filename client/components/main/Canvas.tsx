@@ -9,7 +9,7 @@ interface Props {
 }
 
 export function Canvas({ draw, catSetter, cat }: Props) {
-  const canvasRef = useRef<HTMLCanvasElement>()
+  const canvasRef = useRef<HTMLCanvasElement>() as React.MutableRefObject<HTMLCanvasElement>
 
   useEffect(() => {
     const canvas = canvasRef.current
