@@ -58,6 +58,11 @@ function doTortie(cat: CatData) {
   cat.tortie_pattern = pelts.patterns.code[randomInt(0, pelts.patterns.code.length - 1)].toLowerCase()
 }
 
+function doWhitePatches(): string {
+  const patch = Object.keys(whitePatches)[randomInt(0, 3)]
+  return whitePatches[patch][randomInt(0, whitePatches[patch].length)]
+}
+
 export function randomiseCat(): CatData {
   const cat: CatData = { ...defaultCat }
   cat.gender = randomBool() ? 'female' : 'male'
@@ -80,8 +85,7 @@ export function randomiseCat(): CatData {
   cat.eye_colour = eyeColours.code[randomInt(0, eyeColours.code.length - 1)]
   cat.reverse = randomBool()
   cat.skin = skinColours.code[randomInt(0, skinColours.code.length - 1)]
-  // cat.white_patches = randomInt(1, 3) === 3 ? whitePatches[randomInt(1, whitePatches.length - 1)] : null
-  // do a function to pick white patches
+  cat.white_patches = randomInt(1, 3) === 3 ? doWhitePatches() : null
   cat.skill = skills.code[randomInt(0, skills.code.length - 1)]
   randomBool() ? cat.secondSkill = skills.code[randomInt(0, skills.code.length - 1)] : null
 
