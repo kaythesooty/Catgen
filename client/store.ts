@@ -1,4 +1,4 @@
-import CatData from '../models/Cat'
+import CatData from '@models/Cat'
 import whitePatches from '@dicts/whitePatches.json'
 
 export function calculateCoords(index: number, maxX: number, maxY: number, width: number, height?: number): number[] {
