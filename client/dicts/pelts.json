@@ -1,0 +1,25 @@
+{
+  "patterns": {
+    "code": [
+      "Tabby", "Ticked", "Mackerel", "Classic", "Sokoke", "Agouti", "Speckled",
+      "Rosette", "SingleColour", "Smoke", "Singlestripe", "Masked", "Bengal", "Marbled"
+    ],
+    "eng": [
+      "Tabby", "Ticked", "Mackerel", "Classic", "Sokoke", "Agouti", "Speckled",
+      "Rosette", "Single Colour", "Smoke", "Single Stripe", "Masked", "Bengal", "Marbled"
+    ]
+  },
+  
+  "colours": {
+    "code": [
+      "WHITE", "PALEGREY", "SILVER", "GREY", "DARKGREY", "GHOST", "BLACK", "CREAM",
+      "PALEGINGER", "GOLDEN", "GINGER", "DARKGINGER", "SIENNA", "LIGHTBROWN",
+      "LILAC", "BROWN", "GOLDEN-BROWN", "DARKBROWN", "CHOCOLATE"
+    ],
+    "eng": [
+      "White", "Pale Grey", "Silver", "Grey", "Dark Grey", "Ghost", "Black", "Cream",
+      "Pale Ginger", "Golden", "Ginger", "Dark Ginger", "Sienna", "Light Brown",
+      "Lilac", "Brown", "Golden-brown", "Dark Brown", "Chocolate"
+    ]
+  }
+}
