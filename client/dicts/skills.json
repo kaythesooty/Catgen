@@ -1,0 +1,32 @@
+{
+  "code": [
+    "CAMP", "CLAIRVOYANT", "CLEVER", "CLIMBER", "DARK", "DREAM", "FIGHTER", "GHOST",
+    "HEALER", "HUNTER", "INSIGHTFUL", "KIT", "LORE", "MEDIATOR", "SENSE", "OMEN", 
+    "PROPHET", "RUNNER", "SPEAKER", "STAR", "STORY", "SWIMMER", "TEACHER"
+  ],
+  "eng": {
+    "CAMP": ["Picky nest builder", "Steady paws", "Den builder", "Camp keeper"],
+    "CLAIRVOYANT": ["Oddly insightful", "Somewhat clairvoyant", "Fairly clairvoyant", "Incredibly clairvoyant"],
+    "CLEVER": ["Quick witted", "Clever", "Very clever", "Incredibly clever"],
+    "CLIMBER": ["Constantly climbing", "Good climber", "Great climber", "Impressive climber"],
+    "DARK": ["Interested in the Dark Forest", "Dark Forest affinity", "Deep Dark Forest bond", "Unshakeable Dark Forest link"],
+    "DREAM": ["Restless sleeper", "Strange dreamer", "Dream walker", "Dream shaper"],
+    "FIGHTER": ["Avid play-fighter", "Good fighter", "Formidable fighter", "Unusually strong fighter"],
+    "GHOST": ["Morbid curiosity", "Ghost sense", "Ghost sight", "Ghost speaker"],
+    "HEALER": ["Interested in herbs", "Good healer", "Great healer", "Fantastic healer"],
+    "HUNTER": ["Moss-ball hunter", "Good hunter", "Great hunter", "Renowned hunter"],
+    "INSIGHTFUL": ["Careful listener", "Helpful insight", "Valuable insight", "Trusted advisor"],
+    "KIT": ["Active imagination", "Good kitsitter", "Great kitsitter", "Beloved kitsitter"],
+    "LORE": ["Interested in Clan history", "Learner of lore", "Lore keeper", "Lore master"],
+    "MEDIATOR": ["Quick to make peace", "Good mediator", "Great mediator", "Skilled mediator"],
+    "SENSE": ["Oddly observant", "Natural intuition", "Keen eye", "Unnatural senses"],
+    "OMEN": ["Interested in oddities", "Omen seeker", "Omen sense", "Omen sight"],
+    "PROPHET": ["Fascinated by prophecies", "Prophecy seeker", "Prophecy interpreter", "Prophet"],
+    "RUNNER": ["Never sits still", "Faster runner", "Incredible runner", "Fast as the wind"],
+    "SPEAKER": ["Confident with words", "Good speaker", "Great speaker", "Eloquent speaker"],
+    "STAR": ["Curious about Starclan", "Innate connection to Starclan", "Strong connection to Starclan", "Unbreakable connection to StarClan"],
+    "STORY": ["Lover of stories", "Good storyteller", "Great storyteller", "Masterful storyteller"],
+    "SWIMMER": ["Splashes in puddles", "Good swimmer", "Talented swimmer", "Fish-liker swimmer"],
+    "TEACHER": ["Quick to help", "Good teacher", "Great teacher", "Excellent teacher"]
+  }
+}
