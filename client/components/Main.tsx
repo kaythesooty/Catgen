@@ -21,6 +21,7 @@ import tintColours from '@dicts/tintColours.json'
 import tortiePatterns from '@dicts/tortiePatterns.json'
 import traits from '@dicts/traits.json'
 import whitePatches from '@dicts/whitePatches.json'
+import { Accessories } from '@pickers/Accessories'
 
 const outline = document.getElementById('outline') as HTMLImageElement
 const eyes = document.getElementById('eyes') as HTMLImageElement
@@ -142,6 +143,7 @@ export function Main() {
       {picker === 'torties-base' && <TortieBase setter={updateWrapper} cat={cat} />}
       {picker === 'torties-second' && <TortieSecond setter={updateWrapper} cat={cat} />}
       {picker === 'lore' && <LorePicker setter={updateWrapper} cat={cat} />}
+      {picker === 'accessory' && <Accessories setter={updateWrapper} cat={cat} />}
     </main>
   )
 }
