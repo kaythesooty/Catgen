@@ -29,4 +29,5 @@ export default interface CatData {
   tint: string | null
   skill: string
   secondSkill: string | null
+  accessory: string | null
 }
