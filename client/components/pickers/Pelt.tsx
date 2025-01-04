@@ -3,7 +3,6 @@ import { doWhitePatches, randomInt } from '../../store'
 
 import pelts from '@dicts/pelts.json'
 import tortiePatterns from '@dicts/tortiePatterns.json'
-import whitePatches from '@dicts/whitePatches.json'
 
 interface Props {
   setter: (newCat: CatData) => void
