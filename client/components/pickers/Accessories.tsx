@@ -25,7 +25,7 @@ export function Accessories({ setter, cat }: Props) {
     </label>
     {colourValues.map((clr, i) => <button
       key={i}
-      onClick={() => setter({...cat, accessory: `${collartype}${clr}`})}>
+      onClick={() => setter({...cat, accessory: `${clr}${collartype}`})}>
       {colourNames[i]}
     </button>)}
     <div className="line"></div>
