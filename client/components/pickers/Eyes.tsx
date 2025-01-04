@@ -15,7 +15,7 @@ export function Eyes({ setter, cat }: Props) {
         </button>
       ))}
       <h3>ODD EYES</h3>
-      <button onClick={() => setter({ ...cat, eye_colour2: 'null' })}>None</button>
+      <button onClick={() => setter({ ...cat, eye_colour2: null })}>None</button>
       {eyeColours.code.map((clr, i) => (
         <button key={i} onClick={() => setter({ ...cat, eye_colour2: clr })}>
           {eyeColours.eng[i]}
