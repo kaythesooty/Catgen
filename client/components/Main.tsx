@@ -67,6 +67,8 @@ export function Main() {
     let skinPos = calculateCoords(skinColours.code.indexOf(cat.skin), 6, 3, 150, 350)
     let eyePos2 = calculateCoords(eyeColours.code.indexOf(cat.eye_colour2), 12, 2, 150, 350)
     let whitePos = calculateCoords(whitePatches.masterList.indexOf(cat.white_patches), 14, 10, 150, 350)
+    let vitPos = calculateCoords(whitePatches.masterList.indexOf(cat.vitiligo), 14, 10, 150, 350)
+    let pointPos = calculateCoords(whitePatches.masterList.indexOf(cat.point), 14, 10, 150, 350)
     let tortiePos = calculateCoords(tortiePatterns.masterlist.indexOf(cat.pattern), 10, 5, 150, 350)
     let tortieColourPos = calculateCoords(pelts.colours.code.indexOf(cat.tortie_color), 7, 3, 150, 350)
     let tintPos = calculateCoords(tintColours.code.indexOf(cat.tint), 4, 2, 150, 350)
@@ -82,6 +84,8 @@ export function Main() {
     eyePos2 = eyePos2.map((clr, idx) => clr + outlinePos[idx])
     skinPos = skinPos.map((clr, idx) => clr + outlinePos[idx])
     whitePos = whitePos.map((clr, idx) => clr + outlinePos[idx])
+    vitPos = vitPos.map((clr, idx) => clr + outlinePos[idx])
+    pointPos = pointPos.map((clr, idx) => clr + outlinePos[idx])
     tortiePos = tortiePos.map((clr, idx) => clr + outlinePos[idx])
     tortieColourPos = tortieColourPos.map((clr, idx) => clr + outlinePos[idx])
     tintPos = tintPos.map((clr, idx) => clr + outlinePos[idx])
@@ -115,6 +119,8 @@ export function Main() {
     context.globalCompositeOperation = 'source-over'
 
     context.drawImage(white, whitePos[0], whitePos[1], 50, 50, 10, 10, 400, 400)
+    context.drawImage(white, vitPos[0], vitPos[1], 50, 50, 10, 10, 400, 400)
+    context.drawImage(white, pointPos[0], pointPos[1], 50, 50, 10, 10, 400, 400)
     context.drawImage(outline, outlinePos[0], outlinePos[1], 50, 50, 10, 10, 400, 400)
     context.drawImage(eyes, eyePos[0], eyePos[1], 50, 50, 10, 10, 400, 400)
     context.drawImage(eyes2, eyePos2[0], eyePos2[1], 50, 50, 10, 10, 400, 400)
