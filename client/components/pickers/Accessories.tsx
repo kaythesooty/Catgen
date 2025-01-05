@@ -22,6 +22,7 @@ export function Accessories({ setter, cat }: Props) {
 
   return (
   <div className="picker">
+    <button onClick={() => setter({...cat, accessoryType: null})}>DESTROY ACCESSORY</button>
     <h3>COLLARS</h3>
     {collars.map((clr, i) => <button key={i} onClick={() => setCollar(clr)}>{clr}</button>)}
     <br />
