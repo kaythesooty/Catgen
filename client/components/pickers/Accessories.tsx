@@ -8,7 +8,7 @@ interface Props {
 }
 
 export function Accessories({ setter, cat }: Props) {
-  const [collartype, setCollartype] = useState("")
+  const [collartype, setCollartype] = useState("Leather")
 
   const collars = accessories.collar.eng
   const colours = accessories.colour.eng
