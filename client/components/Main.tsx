@@ -45,24 +45,20 @@ const accessory: accObj = {
   wild: document.getElementById('wild') as HTMLImageElement
 }
 
+const collars = accessories.collar
+
 export function Main() {
   const [cat, setCat] = useState(randomiseCat)
   const [picker, setPicker] = useState('default')
 
   const draw = (context: CanvasRenderingContext2D) => {
     const pose = getPose(cat)
-    let collarType: string
-    let accColour: string | null | undefined = cat.accessory
-    if (accColour !== null){
-    accColour = accessories.colour.code.find(acc => accColour.includes(acc))
-    }
-    if (accColour == undefined) {
-      accColour = null
-      collarType = "none"
-    } else {
-      collarType = accessories.collar.code.findLast(clr => cat.accessory.includes(clr)) as string
-      collarType = collarType.toLowerCase() + "collars"
-    }
+    let accType = ""
+    if (collars.eng.find((acc) => cat.accessoryType === acc)) {
+      accType = collars.code[collars.eng.indexOf(cat.accessoryType as string)]
+      accType = accType.toLowerCase() + "collars"
+    } else if (cat.accessoryType !== null) accType = cat.accessoryType.toLowerCase()
+    
     // Calculate spritesheet coords
     const outlinePos = calculateCoords(pose, 3, 7, 50)
     let colourPos = calculateCoords(pelts.colours.code.indexOf(cat.pelt_color), 7, 3, 150, 350)
@@ -73,7 +69,7 @@ export function Main() {
     let tortiePos = calculateCoords(tortiePatterns.masterlist.indexOf(cat.pattern), 10, 5, 150, 350)
     let tortieColourPos = calculateCoords(pelts.colours.code.indexOf(cat.tortie_color), 7, 3, 150, 350)
     let tintPos = calculateCoords(tintColours.code.indexOf(cat.tint), 4, 2, 150, 350)
-    let collarPos = calculateCoords(accessories.colour.code.indexOf(accColour), 6, 3, 150, 350)
+    let collarPos = calculateCoords(accessories.colour.eng.indexOf(cat.accessoryColour), 6, 3, 150, 350)
 
     // Calculate sprites based on pose
     colourPos = colourPos.map((clr, idx) => clr + outlinePos[idx])
@@ -117,8 +113,8 @@ export function Main() {
     context.drawImage(eyes, eyePos[0], eyePos[1], 50, 50, 10, 10, 400, 400)
     context.drawImage(eyes2, eyePos2[0], eyePos2[1], 50, 50, 10, 10, 400, 400)
     context.drawImage(skin, skinPos[0], skinPos[1], 50, 50, 10, 10, 400, 400)
-    if (collarType !== "none") {
-      context.drawImage(accessory[collarType], collarPos[0], collarPos[1], 50, 50, 10, 10, 400, 400)
+    if (accessories.collar.eng.find((clr) => cat.accessoryType == clr)) {
+      context.drawImage(accessory[`${accType}`], collarPos[0], collarPos[1], 50, 50, 10, 10, 400, 400)
     }
   }
 
