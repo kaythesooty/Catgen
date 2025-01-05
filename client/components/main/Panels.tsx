@@ -138,7 +138,9 @@ export function RightPanel({ choose, cat }: Props) {
         ${accessories.collar.eng.find(clr => cat.accessoryType === clr) ? " collar" : ""}`}
       </button>
       <button onClick={() => choose('white')}>White Patches: 
-        {cat.white_patches != null ? cat.white_patches : `NONE`}</button>
+        {cat.white_patches != null ? cat.white_patches : `NONE`}<br />
+        {cat.vitiligo != null ? `Vitiligo: ${cat.vitiligo}` : null}<br />
+        {cat.point != null ? `Points: ${cat.point}` : null}</button>
       <br />
       <button onClick={() => choose('tint')}>Tint: 
         {cat.tint != null ? cat.tint : `none`}
