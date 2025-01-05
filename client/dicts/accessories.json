@@ -1,0 +1,50 @@
+{
+  "colour": {
+    "code": [
+      "CRIMSON", "BLUE", "YELLOW", "CYAN", "RED", "LIME", "GREEN", "RAINBOW", "BLACK",
+      "SPIKES", "WHITE", "PINK", "PURPLE", "MULTI", "INDIGO"
+    ],
+    "eng": [
+      "Crimson", "Blue", "Yellow", "Cyan", "Red", "Lime", "Green", "Rainbow", "Black",
+      "Spiky", "White", "Pink", "Purple", "Lilac", "Indigo"
+    ]
+  },
+
+  "collar": {
+    "code": ["", "BELL", "BOW", "NYLON"],
+    "eng": ["Leather", "Bell", "Bow", "Nylon"]
+  },
+
+  "herb": {
+    "code": [
+      "MAPLE LEAF", "HOLLY", "BLUE BERRIES", "FORGET ME NOTS", "RYE STALK", "CATTAIL",
+      "POPPY", "ORANGE POPPY", "CYAN POPPY", "WHITE POPPY", "PINK POPPY", "BLUEBELLS",
+      "LILY OF THE VALLEY", "SNAPDRAGON", "HERBS", "PETALS", "NETTLE", "HEATHER", "GORSE",
+      "JUNIPER", "RASPBERRY", "LAVENDER", "OAK LEAVES", "CATMINT", "MAPLE SEED", "LAUREL",
+      "BULB WHITE", "BULB YELLOW", "BULB ORANGE", "BULB PINK", "BULB BLUE", "CLOVER",
+      "DAISY", "DRY HERBS", "DRY CATMINT", "DRY NETTLES", "DRY LAURELS"
+    ],
+    "eng": [
+      "Maple leaf", "Holly", "Blueberries", "Forget-me-nots", "Rye stalk", "Cattail",
+      "Poppy", "Orange poppy", "Cyan poppy", "White poppy", "Pink poppy", "Bluebells",
+      "Lily of the Valley", "Snapdragon", "Herb-covered pelt", "Petal-covered pelt",
+      "Nettle", "Heather", "Gorse flowers", "Juniper", "Raspberry", "Lavender", "Oak leaf",
+      "Catmint", "Maple seed", "Laurel", "White flower bulb", "Yellow flower bulb",
+      "Orange flower bulb", "Pink flower bulb", "Blue flower bulb", "Clover tail",
+      "Daisy tail", "Dry herb-covered pelt", "Dried catmint", "Dried nettle", "Dried laurel"
+    ]
+  },
+
+  "wild": {
+    "code": [
+      "RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS", "GULL FEATHERS", "SPARROW FEATHERS",
+      "MOTH WINGS", "ROSY MOTH WINGS", "MORPHO BUTTERFLY", "MONARCH BUTTERFLY", "CICADA WINGS",
+      "BLACK CICADA"
+    ],
+    "eng": [
+      "Cardinal feathers", "Crow feathers", "Jay feathers", "Gull feathers", "Sparrow feathers",
+      "Moth wings", "Rosy maple moth wings", "Morpho butterfly wings", "Monarch butterfly wings",
+      "Cicada wings", "Black cicada wings"
+    ]
+  }
+}

@@ -1,5 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
 import CatData from '@models/Cat'
+import accessories from '@dicts/accessories.json'
 
 interface Props {
   choose: (picker: string) => void
@@ -130,6 +131,11 @@ export function RightPanel({ choose, cat }: Props) {
     <aside className="panel">
       <h3 className="m0">Right Panel</h3>
       <br />
+      <button onClick={() => choose('accessory')}>Accessory:
+        {` ${accessories.collar.eng.find(clr => cat.accessoryType === clr) ? cat.accessoryColour : ""} 
+        ${cat.accessoryType != null ? cat.accessoryType: "None"}
+        ${accessories.collar.eng.find(clr => cat.accessoryType === clr) ? " collar" : ""}`}
+      </button>
       <button onClick={() => choose('white')}>White Patches: 
         {cat.white_patches != null ? cat.white_patches : `NONE`}</button>
       <br />

@@ -1,12 +1,13 @@
 {
-  "name": "boilerplate-react",
+  "name": "catgen",
   "type": "module",
-  "version": "0.2.0",
-  "description": "React!",
-  "repository": "https://github.com/dev-academy-challenges/react-boilerplate.git",
+  "version": "0.2.1",
+  "description": "Cat generator for Clangen",
+  "repository": "https://github.com/kaythesooty/Catgen.git",
   "main": "server/index.js",
   "scripts": {
     "dev": "vite",
+    "devhost": "vite --host",
     "build": "vite build",
     "test": "vitest",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
@@ -18,7 +19,7 @@
       "bundle.js"
     ]
   },
-  "author": "Dev Academy Aotearoa",
+  "author": "Kay Keree",
   "license": "ISC",
   "devDependencies": {
     "@devacademy/eslint-config": "^1.10.1",

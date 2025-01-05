@@ -3,17 +3,19 @@ import { Canvas } from './main/Canvas'
 import { LeftPanel, RightPanel } from './main/Panels'
 import { randomiseCat } from './main/Save'
 import { calculateCoords, getPose, randomInt } from '../store'
-import { PosePicker } from './pickers/Pose'
 import { Pickers } from './main/Pickers'
-import { Eyes } from './pickers/Eyes'
-import { Skin } from './pickers/Skin'
-import { Pelt } from './pickers/Pelt'
-import { White } from './pickers/White'
+import { PosePicker } from '@pickers/Pose'
+import { Eyes } from '@pickers/Eyes'
+import { Skin } from '@pickers/Skin'
+import { Pelt } from '@pickers/Pelt'
+import { White } from '@pickers/White'
 import CatData from '@models/Cat'
-import { TortieBase, TortieOptions, TortieSecond } from './pickers/Tortie'
-import { Tint } from './pickers/Tint'
-import { LorePicker } from './pickers/Lore'
+import { TortieBase, TortieOptions, TortieSecond } from '@pickers/Tortie'
+import { Tint } from '@pickers/Tint'
+import { LorePicker } from '@pickers/Lore'
+import { Accessories } from '@pickers/Accessories'
 
+import accessories from '@dicts/accessories.json'
 import eyeColours from '@dicts/eyeColours.json'
 import pelts from '@dicts/pelts.json'
 import skinColours from '@dicts/skinColours.json'
@@ -30,12 +32,34 @@ const white = document.getElementById('white-patches') as HTMLImageElement
 const tortie = document.getElementById('tortie-masks') as HTMLImageElement
 const tints = document.getElementById('tints') as HTMLImageElement
 
+type accObj = {
+  [key: string]: HTMLImageElement;
+}
+
+const accessory: accObj = {
+  collars: document.getElementById('collars') as HTMLImageElement,
+  bellcollars: document.getElementById('bellcollars') as HTMLImageElement,
+  bowcollars: document.getElementById('bowcollars') as HTMLImageElement,
+  nyloncollars: document.getElementById('nyloncollars') as HTMLImageElement,
+  herb: document.getElementById('medcatherbs') as HTMLImageElement,
+  wild: document.getElementById('wild') as HTMLImageElement
+}
+
+const collars = accessories.collar
+
 export function Main() {
   const [cat, setCat] = useState(randomiseCat)
   const [picker, setPicker] = useState('default')
 
   const draw = (context: CanvasRenderingContext2D) => {
     const pose = getPose(cat)
+    let accType = ""
+    if (collars.eng.find((acc) => cat.accessoryType === acc)) {
+      accType = collars.code[collars.eng.indexOf(cat.accessoryType as string)]
+      accType = accType.toLowerCase() + "collars"
+    } else if (accessories.wild.eng.find(wld => cat.accessoryType == wld)) accType = "wild"
+    else if (accessories.herb.eng.find(hrb => cat.accessoryType == hrb)) accType = "herb"
+    
     // Calculate spritesheet coords
     const outlinePos = calculateCoords(pose, 3, 7, 50)
     let colourPos = calculateCoords(pelts.colours.code.indexOf(cat.pelt_color), 7, 3, 150, 350)
@@ -46,6 +70,11 @@ export function Main() {
     let tortiePos = calculateCoords(tortiePatterns.masterlist.indexOf(cat.pattern), 10, 5, 150, 350)
     let tortieColourPos = calculateCoords(pelts.colours.code.indexOf(cat.tortie_color), 7, 3, 150, 350)
     let tintPos = calculateCoords(tintColours.code.indexOf(cat.tint), 4, 2, 150, 350)
+    let collarPos = calculateCoords(accessories.colour.eng.indexOf(cat.accessoryColour), 6, 3, 150, 350)
+    let accPos = [-110, -110]
+    if (accType === "wild" || accType === "herb") {
+      accPos = calculateCoords(accessories[accType].eng.indexOf(cat.accessoryType), 11, 4, 150, 350)
+    }
 
     // Calculate sprites based on pose
     colourPos = colourPos.map((clr, idx) => clr + outlinePos[idx])
@@ -56,6 +85,8 @@ export function Main() {
     tortiePos = tortiePos.map((clr, idx) => clr + outlinePos[idx])
     tortieColourPos = tortieColourPos.map((clr, idx) => clr + outlinePos[idx])
     tintPos = tintPos.map((clr, idx) => clr + outlinePos[idx])
+    collarPos = collarPos.map((clr, idx) => clr + outlinePos[idx])
+    accPos = accPos.map((clr, idx) => clr + outlinePos[idx])
 
     // ---- DRAW CAT ----
     // Initialise canvas
@@ -88,6 +119,11 @@ export function Main() {
     context.drawImage(eyes, eyePos[0], eyePos[1], 50, 50, 10, 10, 400, 400)
     context.drawImage(eyes2, eyePos2[0], eyePos2[1], 50, 50, 10, 10, 400, 400)
     context.drawImage(skin, skinPos[0], skinPos[1], 50, 50, 10, 10, 400, 400)
+
+    console.log(accType)
+    if (accessories.collar.eng.find((clr) => cat.accessoryType == clr)) {
+      context.drawImage(accessory[`${accType}`], collarPos[0], collarPos[1], 50, 50, 10, 10, 400, 400)
+    } else if (accType !== "") context.drawImage(accessory[accType], accPos[0], accPos[1], 50, 50, 10, 10, 400, 400)
   }
 
   const updateWrapper = (newCat: CatData) => {
@@ -133,6 +169,7 @@ export function Main() {
       {picker === 'torties-base' && <TortieBase setter={updateWrapper} cat={cat} />}
       {picker === 'torties-second' && <TortieSecond setter={updateWrapper} cat={cat} />}
       {picker === 'lore' && <LorePicker setter={updateWrapper} cat={cat} />}
+      {picker === 'accessory' && <Accessories setter={updateWrapper} cat={cat} />}
     </main>
   )
 }
