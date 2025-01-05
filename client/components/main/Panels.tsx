@@ -131,7 +131,8 @@ export function RightPanel({ choose, cat }: Props) {
       <h3 className="m0">Right Panel</h3>
       <br />
       <button onClick={() => choose('accessory')}>Accessory:
-        {cat.accessory != null ? cat.accessory : "None"}
+        {` ${cat.accessoryType != null ? cat.accessoryColour : ""} 
+        ${cat.accessoryType != null ? cat.accessoryType: "None"}`}
       </button>
       <button onClick={() => choose('white')}>White Patches: 
         {cat.white_patches != null ? cat.white_patches : `NONE`}</button>
