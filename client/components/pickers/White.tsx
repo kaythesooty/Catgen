@@ -29,6 +29,12 @@ export function White({ setter, cat }: Props) {
           {whitePatches.highWhite.eng[i]}
         </button>
       ))}
+      <h4>MOSTLY WHITE</h4>
+      {whitePatches.mostlyWhite.code.map((ptn, i) => (
+        <button key={i} onClick={() => setter({ ...cat, white_patches: ptn })}>
+          {whitePatches.mostlyWhite.eng[i]}
+        </button>
+      ))}
       <div className="line"></div>
       <h3>VITILIGO</h3>
       <button onClick={() => setter({ ...cat, vitiligo: null })}>NONE</button>
