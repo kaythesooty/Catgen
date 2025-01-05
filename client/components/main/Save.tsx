@@ -39,6 +39,8 @@ const defaultCat: CatData = {
   eye_colour2: null,
   reverse: true,
   white_patches: null,
+  vitiligo: null,
+  point: null,
   pattern: null,
   tortie_base: null,
   tortie_color: null,

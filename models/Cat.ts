@@ -21,6 +21,8 @@ export default interface CatData {
   eye_colour2: string | null
   reverse: boolean
   white_patches: string | null
+  vitiligo: string | null
+  point: string | null
   pattern: string | null
   tortie_base: string | null
   tortie_color: string | null
