@@ -98,7 +98,7 @@ export function LeftPanel({ choose, cat, setCat }: Props) {
       </select>
       <br />
       <label>
-        Age: <input type="number" min={0} max={512} value={cat.moons} onChange={(e) => setCat({ ...cat, moons: +e.target.value })}></input>
+        Moons: <input type="number" min={0} max={512} value={cat.moons} onChange={(e) => setCat({ ...cat, moons: +e.target.value })}></input>
       </label>
       <br />
       <button onClick={() => choose('poses')}>Poses</button>
@@ -106,6 +106,7 @@ export function LeftPanel({ choose, cat, setCat }: Props) {
       <button onClick={() => choose('eyes')}>Eye Colour:<br />{cat.eye_colour}
         {cat.eye_colour2 != null && ` and ${cat.eye_colour2}`}
       </button>
+      <br />
       <button onClick={() => choose('skin')}>Skin Colour: {cat.skin}</button>
       <button onClick={() => choose('pelt')}>Pelt Options</button>
       <p>
