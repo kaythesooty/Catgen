@@ -47,7 +47,8 @@ const defaultCat: CatData = {
   tint: 'none',
   skill: 'CAMP',
   secondSkill: null,
-  accessory: null
+  accessoryType: null,
+  accessoryColour: 'white'
 }
 
 function doTortie(cat: CatData) {
