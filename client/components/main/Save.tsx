@@ -249,6 +249,8 @@ function saveJson(cat: CatData) {
     eye_colour2: cat.eye_colour2,
     reverse: cat.reverse,
     white_patches: cat.white_patches,
+    vitiligo: cat.vitiligo,
+    points: cat.point,
     pattern: cat.pattern,
     tortie_base: cat.tortie_base,
     tortie_color: cat.tortie_color,

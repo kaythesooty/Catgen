@@ -59,6 +59,6 @@ export function randomBool(): boolean {
 }
 
 export function doWhitePatches(): string {
-  const patch = Object.keys(whitePatches)[randomInt(0, 3)]
-  return whitePatches[patch][randomInt(0, whitePatches[patch].length)]
+  const patch = Object.keys(whitePatches)[randomInt(1, 4)]
+  return whitePatches[patch].code[randomInt(0, whitePatches[patch].code.length)]
 }
