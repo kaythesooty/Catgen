@@ -10,10 +10,10 @@ interface Props {
 export function Accessories({ setter, cat }: Props) {
   const [collartype, setCollartype] = useState("")
 
-  const { code: collarTypes, eng: collarNames } = accessories.collar
-  const { code: colourValues, eng: colourNames } = accessories.colour
-  const { code: herbValues, eng: herbNames } = accessories.herb
-  const { code: wildValues, eng: wildNames } = accessories.wild
+  const collars = accessories.collar.eng
+  const colours = accessories.colour.eng
+  const herb = accessories.herb.eng
+  const wild = accessories.wild.eng
 
   const setCollar = (collarName: string) => {
     setCollartype(collarName)
@@ -24,21 +24,21 @@ export function Accessories({ setter, cat }: Props) {
   <div className="picker">
     <h3>COLLARS</h3>
     <label>Collar type:
-      <select value={collartype} onChange={(e) => setCollar(e.target.value)}>
-        {collarTypes.map((opt, i) => <option value={opt} key={i}>{collarNames[i]}</option>)}
+      <select value={collars} onChange={(e) => setCollar(e.target.value)}>
+        {collars.map((opt, i) => <option value={opt} key={i}>{opt}</option>)}
       </select>
     </label>
-    {colourValues.map((clr, i) => <button
+    {colours.map((clr, i) => <button
       key={i}
       onClick={() => setter({...cat, accessoryType: `${clr}${collartype}`})}>
-      {colourNames[i]}
+      {clr}
     </button>)}
     <div className="line"></div>
     <h3>HERBS</h3>
-    {herbValues.map((hrb, i) => <button key={i} onClick={() => setter({...cat, accessoryType: hrb})}>{herbNames[i]}</button>)}
+    {herb.map((hrb, i) => <button key={i} onClick={() => setter({...cat, accessoryType: hrb})}>{hrb}</button>)}
     <div className="line"></div>
     <h3>WILD</h3>
-    {wildValues.map((wld, i) => <button key={i} onClick={() => setter({...cat, accessoryType: wld})}>{wildNames[i]}</button>)}
+    {wild.map((wld, i) => <button key={i} onClick={() => setter({...cat, accessoryType: wld})}>{wld}</button>)}
   </div>
   )
 }
