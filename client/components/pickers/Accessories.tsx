@@ -23,14 +23,11 @@ export function Accessories({ setter, cat }: Props) {
   return (
   <div className="picker">
     <h3>COLLARS</h3>
-    <label>Collar type:
-      <select value={collars} onChange={(e) => setCollar(e.target.value)}>
-        {collars.map((opt, i) => <option value={opt} key={i}>{opt}</option>)}
-      </select>
-    </label>
+    {collars.map((clr, i) => <button key={i} onClick={() => setCollar(clr)}>{clr}</button>)}
+    <br />
     {colours.map((clr, i) => <button
       key={i}
-      onClick={() => setter({...cat, accessoryType: `${clr}${collartype}`})}>
+      onClick={() => setter({...cat, accessoryColour: clr, accessoryType: collartype})}>
       {clr}
     </button>)}
     <div className="line"></div>
