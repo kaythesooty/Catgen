@@ -46,7 +46,8 @@ const defaultCat: CatData = {
   skin: 'DARKSALMON',
   tint: 'none',
   skill: 'CAMP',
-  secondSkill: null
+  secondSkill: null,
+  accessory: null
 }
 
 function doTortie(cat: CatData) {
