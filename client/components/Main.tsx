@@ -31,6 +31,7 @@ const skin = document.getElementById('skin') as HTMLImageElement
 const white = document.getElementById('white-patches') as HTMLImageElement
 const tortie = document.getElementById('tortie-masks') as HTMLImageElement
 const tints = document.getElementById('tints') as HTMLImageElement
+const scars = document.getElementById('scars') as HTMLImageElement
 
 type accObj = {
   [key: string]: HTMLImageElement;
@@ -77,6 +78,7 @@ export function Main() {
     if (accType === "wild" || accType === "herb") {
       accPos = calculateCoords(accessories[accType].eng.indexOf(cat.accessoryType), 11, 4, 150, 350)
     }
+    let scarPos = calculateCoords(cat.scars, 12, 4, 150, 350)
 
     // Calculate sprites based on pose
     colourPos = colourPos.map((clr, idx) => clr + outlinePos[idx])
@@ -91,6 +93,7 @@ export function Main() {
     tintPos = tintPos.map((clr, idx) => clr + outlinePos[idx])
     collarPos = collarPos.map((clr, idx) => clr + outlinePos[idx])
     accPos = accPos.map((clr, idx) => clr + outlinePos[idx])
+    scarPos = scarPos.map((clr, idx) => clr + outlinePos[idx])
 
     // ---- DRAW CAT ----
     // Initialise canvas
@@ -125,6 +128,7 @@ export function Main() {
     context.drawImage(eyes, eyePos[0], eyePos[1], 50, 50, 10, 10, 400, 400)
     context.drawImage(eyes2, eyePos2[0], eyePos2[1], 50, 50, 10, 10, 400, 400)
     context.drawImage(skin, skinPos[0], skinPos[1], 50, 50, 10, 10, 400, 400)
+    context.drawImage(scars, scarPos[0], scarPos[1], 50, 50, 10, 10, 400, 400)
 
     console.log(accType)
     if (accessories.collar.eng.find((clr) => cat.accessoryType == clr)) {
@@ -162,7 +166,7 @@ export function Main() {
         <div className="flex-container flex-column">
           <Canvas draw={draw} catSetter={randomCat} cat={cat} />
         </div>
-        <RightPanel choose={handlePicker} cat={cat} />
+        <RightPanel choose={handlePicker} cat={cat} setCat={updateWrapper} />
       </div>
       {picker === 'default' && <Pickers />}
       {picker === 'poses' && <PosePicker setter={updateWrapper} cat={cat} />}

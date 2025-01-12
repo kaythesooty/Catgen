@@ -127,7 +127,11 @@ export function LeftPanel({ choose, cat, setCat }: Props) {
   )
 }
 
-export function RightPanel({ choose, cat }: Props) {
+export function RightPanel({ choose, cat, setCat }: Props) {
+  if (setCat === undefined) {
+    return <h4>Cannot set cat! (Panels.tsx)</h4>
+  }
+
   return (
     <aside className="panel">
       <h3 className="m0">Right Panel</h3>
@@ -152,6 +156,7 @@ export function RightPanel({ choose, cat }: Props) {
       <p>{cat.tortie_base != null && `${cat.pelt_color} ${cat.tortie_base}`}</p>
       {cat.tortie_base != null && <button onClick={() => choose('torties-second')}>Tortie Secondary Options</button>}
       <p>{cat.tortie_base != null && `${cat.tortie_color} ${cat.tortie_pattern}`}</p>
+      <input type="number" min={0} max={48} value={cat.scars} onChange={(e) => setCat({ ...cat, scars: +e.target.value })}></input>
     </aside>
   )
 }
