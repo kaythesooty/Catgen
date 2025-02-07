@@ -51,7 +51,7 @@ const defaultCat: CatData = {
   secondSkill: null,
   accessoryType: null,
   accessoryColour: 'White',
-  scars: 0
+  scars: ['', '', '', '']
 }
 
 function doTortie(cat: CatData) {

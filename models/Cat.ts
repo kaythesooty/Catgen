@@ -33,5 +33,5 @@ export default interface CatData {
   secondSkill: string | null
   accessoryType: string | null
   accessoryColour: string
-  scars: number
+  scars: [string, string, string, string]
 }
