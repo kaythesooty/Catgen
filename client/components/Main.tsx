@@ -14,6 +14,7 @@ import { TortieBase, TortieOptions, TortieSecond } from '@pickers/Tortie'
 import { Tint } from '@pickers/Tint'
 import { LorePicker } from '@pickers/Lore'
 import { Accessories } from '@pickers/Accessories'
+import { Scars } from '@pickers/Scars'
 
 import accessories from '@dicts/accessories.json'
 import eyeColours from '@dicts/eyeColours.json'
@@ -180,6 +181,7 @@ export function Main() {
       {picker === 'torties-second' && <TortieSecond setter={updateWrapper} cat={cat} />}
       {picker === 'lore' && <LorePicker setter={updateWrapper} cat={cat} />}
       {picker === 'accessory' && <Accessories setter={updateWrapper} cat={cat} />}
+			{picker === 'scars' && <Scars setter={updateWrapper} cat={cat} />}
     </main>
   )
 }
