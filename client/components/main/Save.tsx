@@ -70,6 +70,7 @@ export function randomiseCat(): CatData {
   cat.moons = randomInt(0, 180)
   cat.pelt_name = pelts.patterns.code[randomInt(0, pelts.patterns.code.length - 1)]
   cat.pelt_color = pelts.colours.code[randomInt(0, pelts.colours.code.length - 1)]
+	cat.scars = ['', '', '', '']
 
   if (randomInt(1, 3) == 3) {
     cat.pelt_length = 'long'
