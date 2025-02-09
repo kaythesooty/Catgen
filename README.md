@@ -9,6 +9,7 @@ Currently in alpha, Catgen will help with generating and customising cats for Cl
 ### Version 0.3
 * Added accessories
 * Added scar picker
+* Added StarClan (and Dark Forest!) cats
 
 ### Version 0.2.1
 * Simplified layout
