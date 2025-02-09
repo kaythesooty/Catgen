@@ -8,6 +8,7 @@ import skinColours from '@dicts/skinColours.json'
 import tintColours from '@dicts/tintColours.json'
 import tortiePatterns from '@dicts/tortiePatterns.json'
 import traits from '@dicts/traits.json'
+import accessories from '@dicts/accessories.json'
 import CatData from '@models/Cat'
 
 interface Props {
@@ -196,6 +197,29 @@ function createSkillDict(cat: CatData) {
   return skillDict
 }
 
+function createAccessory(type: string | null, colour: string) {
+	let Type: string
+	let Colour: string
+	let foundIndex: number
+
+	if (type == null) return null
+
+	if ((foundIndex = accessories.collar.eng.indexOf(type)) >= 0) {
+		Type = accessories.collar.code[foundIndex]
+	} else if ((foundIndex = accessories.wild.eng.indexOf(type)) >= 0) {
+		Type = accessories.wild.code[foundIndex]
+	} else if((foundIndex = accessories.herb.eng.indexOf(type)) >= 0) {
+		Type = accessories.collar.code[foundIndex]
+	} else return null
+
+	if (accessories.collar.code.includes(Type)) {
+		Colour = accessories.colour.code[accessories.colour.eng.indexOf(colour)]
+	} else return Type
+
+	const newAccessory = Type + Colour
+	return newAccessory
+}
+
 function saveJson(cat: CatData) {
   const pronouns = [
     {
@@ -259,7 +283,8 @@ function saveJson(cat: CatData) {
     tortie_pattern: cat.tortie_pattern,
     skin: cat.skin,
     tint: cat.tint,
-    skill_dict: createSkillDict(cat)
+    skill_dict: createSkillDict(cat),
+		accessory: createAccessory(cat.accessoryType, cat.accessoryColour)
   }
 
   const blob = new Blob([JSON.stringify(exportCat, null, 4)], { type: 'application/json' })

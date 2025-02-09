@@ -82,7 +82,7 @@ export function Main() {
     }
     let scarPos = cat.scars.map((scr) => calculateCoords(scarDict.masterlist.indexOf(scr), 12, 4, 150, 350))
 		// const scarPos = cat.scars.map((scr, i) => i + 2)
-		console.log(scarPos)
+		// console.log(scarPos)
 		// calculateCoords(cat.scars, 12, 4, 150, 350)
 
     // Calculate sprites based on pose
@@ -136,7 +136,7 @@ export function Main() {
     // context.drawImage(scars, scarPos[0], scarPos[1], 50, 50, 10, 10, 400, 400)
 		for (let i = 0; i < 4; i++) context.drawImage(scars, scarPos[i][0], scarPos[i][1], 50, 50, 10, 10, 400, 400)
 
-    console.log(accType)
+    console.log(cat.accessoryType, cat.accessoryColour)
     if (accessories.collar.eng.find((clr) => cat.accessoryType == clr)) {
       context.drawImage(accessory[`${accType}`], collarPos[0], collarPos[1], 50, 50, 10, 10, 400, 400)
     } else if (accType !== "") context.drawImage(accessory[accType], accPos[0], accPos[1], 50, 50, 10, 10, 400, 400)
