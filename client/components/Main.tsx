@@ -129,17 +129,19 @@ export function Main() {
     context.drawImage(white, whitePos[0], whitePos[1], 50, 50, 10, 10, 400, 400)
     context.drawImage(white, vitPos[0], vitPos[1], 50, 50, 10, 10, 400, 400)
     context.drawImage(white, pointPos[0], pointPos[1], 50, 50, 10, 10, 400, 400)
-    context.drawImage(outline, outlinePos[0], outlinePos[1], 50, 50, 10, 10, 400, 400)
+    // context.drawImage(outline, outlinePos[0], outlinePos[1], 50, 50, 10, 10, 400, 400)
     context.drawImage(eyes, eyePos[0], eyePos[1], 50, 50, 10, 10, 400, 400)
     context.drawImage(eyes2, eyePos2[0], eyePos2[1], 50, 50, 10, 10, 400, 400)
     context.drawImage(skin, skinPos[0], skinPos[1], 50, 50, 10, 10, 400, 400)
     // context.drawImage(scars, scarPos[0], scarPos[1], 50, 50, 10, 10, 400, 400)
 		for (let i = 0; i < 4; i++) context.drawImage(scars, scarPos[i][0], scarPos[i][1], 50, 50, 10, 10, 400, 400)
 
-    console.log(cat.accessoryType, cat.accessoryColour)
+    // console.log(cat.accessoryType, cat.accessoryColour)
+		context.drawImage(outline, outlinePos[0], outlinePos[1], 50, 50, 10, 10, 400, 400)
     if (accessories.collar.eng.find((clr) => cat.accessoryType == clr)) {
       context.drawImage(accessory[`${accType}`], collarPos[0], collarPos[1], 50, 50, 10, 10, 400, 400)
     } else if (accType !== "") context.drawImage(accessory[accType], accPos[0], accPos[1], 50, 50, 10, 10, 400, 400)
+
   }
 
   const updateWrapper = (newCat: CatData) => {
