@@ -55,6 +55,7 @@ const defaultCat: CatData = {
   accessoryColour: 'White',
   scars: ['', '', '', ''],
 	dead: false,
+	dead_moons: 0,
 	df: false
 }
 
@@ -290,6 +291,7 @@ function saveJson(cat: CatData) {
 		accessory: createAccessory(cat.accessoryType, cat.accessoryColour),
 		scars: cat.scars.filter(scr => scr != ""),
 		dead: cat.dead,
+		dead_moons: cat.dead_moons,
 		df: cat.df
   }
 

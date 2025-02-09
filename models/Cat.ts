@@ -35,5 +35,6 @@ export default interface CatData {
   accessoryColour: string
   scars: [string, string, string, string]
 	dead: boolean
+	dead_moons: number
 	df: boolean
 }
