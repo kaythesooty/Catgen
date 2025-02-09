@@ -288,7 +288,9 @@ function saveJson(cat: CatData) {
     tint: cat.tint,
     skill_dict: createSkillDict(cat),
 		accessory: createAccessory(cat.accessoryType, cat.accessoryColour),
-		scars: cat.scars.filter(scr => scr != "")
+		scars: cat.scars.filter(scr => scr != ""),
+		dead: cat.dead,
+		df: cat.df
   }
 
   const blob = new Blob([JSON.stringify(exportCat, null, 4)], { type: 'application/json' })
