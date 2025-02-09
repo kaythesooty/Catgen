@@ -34,4 +34,6 @@ export default interface CatData {
   accessoryType: string | null
   accessoryColour: string
   scars: [string, string, string, string]
+	dead: boolean
+	df: boolean
 }

@@ -27,6 +27,8 @@ import whitePatches from '@dicts/whitePatches.json'
 import scarDict from '@dicts/scars.json'
 
 const outline = document.getElementById('outline') as HTMLImageElement
+const outlinedead = document.getElementById('outlinedead') as HTMLImageElement
+const outlinedf = document.getElementById('outlinedf') as HTMLImageElement
 const eyes = document.getElementById('eyes') as HTMLImageElement
 const eyes2 = document.getElementById('eyes2') as HTMLImageElement
 const skin = document.getElementById('skin') as HTMLImageElement
