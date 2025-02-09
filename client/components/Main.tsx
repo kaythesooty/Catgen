@@ -138,8 +138,11 @@ export function Main() {
     // context.drawImage(scars, scarPos[0], scarPos[1], 50, 50, 10, 10, 400, 400)
 		for (let i = 0; i < 4; i++) context.drawImage(scars, scarPos[i][0], scarPos[i][1], 50, 50, 10, 10, 400, 400)
 
-    // console.log(cat.accessoryType, cat.accessoryColour)
-		context.drawImage(outline, outlinePos[0], outlinePos[1], 50, 50, 10, 10, 400, 400)
+    // Choose outline, dead or alive (or in hell)
+		if (cat.dead == false) context.drawImage(outline, outlinePos[0], outlinePos[1], 50, 50, 10, 10, 400, 400)
+		else if (cat.df == true) context.drawImage(outlinedf, outlinePos[0], outlinePos[1], 50, 50, 10, 10, 400, 400)
+		else context.drawImage(outlinedead, outlinePos[0], outlinePos[1], 50, 50, 10, 10, 400, 400)
+
     if (accessories.collar.eng.find((clr) => cat.accessoryType == clr)) {
       context.drawImage(accessory[`${accType}`], collarPos[0], collarPos[1], 50, 50, 10, 10, 400, 400)
     } else if (accType !== "") context.drawImage(accessory[accType], accPos[0], accPos[1], 50, 50, 10, 10, 400, 400)
