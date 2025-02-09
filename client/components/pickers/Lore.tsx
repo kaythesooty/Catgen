@@ -17,6 +17,8 @@ export function LorePicker({ setter, cat }: Props) {
 
   return (
     <div className="picker">
+			<label>Dead <input type='checkbox'></input></label>
+			<label>Dark Forest <input type='checkbox'></input></label>
       <h3>BACKSTORY</h3>
       <select value={backstoryCategory} onChange={(e) => {setBackstoryCategory(e.target.value)}}>
         {Object.keys(backstories.categories).map((key, i) => <option key={i} value={key}>{backstories.display[key]}</option>)}
