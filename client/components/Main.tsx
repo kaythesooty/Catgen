@@ -161,6 +161,7 @@ export function Main() {
     } else if (newCat.status != 'kitten' && !traits.normal.find(trt => trt == newCat.trait)) {
       newCat.trait = traits.normal[randomInt(0, traits.normal.length - 1)]
     }
+		if (!newCat.dead) newCat.dead_moons = 0
     setCat(newCat)
   }
 

@@ -13,15 +13,18 @@ interface Props {
 export function LorePicker({ setter, cat }: Props) {
   const [backstoryCategory, setBackstoryCategory] = useState("clan_founder_backstories")
 
-  console.log(backstoryCategory, cat.backstory)
+  // console.log(backstoryCategory, cat.backstory)
 
   return (
     <div className="picker">
+			<label>Dead moons: 
+				<input type="number" min={0} max={512} disabled={!cat.dead} value={cat.dead_moons} onChange={(e) => setter({ ...cat, dead_moons: +e.target.value })}></input>
+      </label>
 			<label>Dead 
 				<input type='checkbox' checked={cat.dead} onChange={(e) => setter({ ...cat, dead: e.target.checked })}></input>
 			</label>
 			<label>Dark Forest 
-				<input type='checkbox' checked={cat.df} onChange={(e) => setter({ ...cat, dead: e.target.checked, df: e.target.checked })}></input>
+				<input type='checkbox' checked={cat.df} disabled={!cat.dead} onChange={(e) => setter({ ...cat, df: e.target.checked })}></input>
 			</label>
       <h3>BACKSTORY</h3>
       <select value={backstoryCategory} onChange={(e) => {setBackstoryCategory(e.target.value)}}>
