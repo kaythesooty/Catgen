@@ -9,6 +9,7 @@ import tintColours from '@dicts/tintColours.json'
 import tortiePatterns from '@dicts/tortiePatterns.json'
 import traits from '@dicts/traits.json'
 import accessories from '@dicts/accessories.json'
+import scars from '@dicts/scars.json'
 import CatData from '@models/Cat'
 
 interface Props {
@@ -284,7 +285,8 @@ function saveJson(cat: CatData) {
     skin: cat.skin,
     tint: cat.tint,
     skill_dict: createSkillDict(cat),
-		accessory: createAccessory(cat.accessoryType, cat.accessoryColour)
+		accessory: createAccessory(cat.accessoryType, cat.accessoryColour),
+		scars: cat.scars.filter(scr => scr != "")
   }
 
   const blob = new Blob([JSON.stringify(exportCat, null, 4)], { type: 'application/json' })
